@@ -1,0 +1,1500 @@
+#app-wujie-angular-root {
+  --red: #dd0031;
+  --red-dark: #b5002b;
+  --rose: #fff1f3;
+  --ink: #271c21;
+  --muted: #75666d;
+  --line: #eadfe2;
+  color: var(--ink);
+  background: #fffcfc;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+body:has(> #app-wujie-angular-root) {
+  margin: 0;
+}
+#app-wujie-angular-root * {
+  box-sizing: border-box;
+}
+#app-wujie-angular-root :is(h1, h2, h3, h4, p) {
+  margin: 0;
+}
+#app-wujie-angular-root a {
+  text-decoration: none;
+  color: inherit;
+}
+#app-wujie-angular-root :is(button, input, textarea, select) {
+  font: inherit;
+}
+#app-wujie-angular-root
+  :is(button, a, input, textarea, select, summary, pre):focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+#app-wujie-angular-root button,
+#app-wujie-angular-root summary {
+  cursor: pointer;
+}
+#app-wujie-angular-root button {
+  color: inherit;
+}
+#app-wujie-angular-root .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+#app-wujie-angular-root .skip-link {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  z-index: 10;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  background: white;
+}
+#app-wujie-angular-root .skip-link:focus-visible {
+  width: auto;
+  height: auto;
+  padding: 12px 20px;
+  overflow: visible;
+  clip-path: none;
+}
+#app-wujie-angular-root .studio-shell {
+  position: relative;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+#app-wujie-angular-root .topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 100px;
+  border-bottom: 1px solid var(--line);
+}
+#app-wujie-angular-root .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+  white-space: nowrap;
+}
+#app-wujie-angular-root .brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 36px;
+  color: white;
+  background: var(--red);
+  clip-path: polygon(50% 0, 100% 18%, 91% 80%, 50% 100%, 9% 80%, 0 18%);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+}
+#app-wujie-angular-root .brand-light {
+  font-weight: 400;
+}
+#app-wujie-angular-root .main-nav {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+#app-wujie-angular-root .main-nav a {
+  position: relative;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 14px 0;
+}
+#app-wujie-angular-root .main-nav a.active,
+#app-wujie-angular-root .main-nav a:hover {
+  color: var(--red);
+}
+#app-wujie-angular-root .main-nav a.active::after {
+  content: "";
+  height: 3px;
+  background: var(--red);
+  position: absolute;
+  bottom: 5px;
+  left: 35%;
+  right: 35%;
+  border-radius: 3px;
+}
+#app-wujie-angular-root .nav-handbook {
+  font-size: 13px;
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  white-space: nowrap;
+}
+#app-wujie-angular-root .nav-handbook span {
+  margin-left: 12px;
+}
+#app-wujie-angular-root .nav-handbook:hover,
+#app-wujie-angular-root .nav-handbook.active {
+  color: var(--red);
+  border-color: var(--red);
+}
+#app-wujie-angular-root .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 1.8px;
+  color: var(--red);
+}
+#app-wujie-angular-root .eyebrow i,
+#app-wujie-angular-root .red-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+}
+#app-wujie-angular-root .accent {
+  color: var(--red);
+}
+#app-wujie-angular-root .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 13px 23px;
+  color: white;
+  background: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+#app-wujie-angular-root .button:hover {
+  background: var(--red-dark);
+}
+#app-wujie-angular-root .text-link {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+#app-wujie-angular-root .text-link:hover {
+  color: var(--red);
+}
+#app-wujie-angular-root .hero {
+  padding: 35px 0 48px;
+}
+#app-wujie-angular-root .hero-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+#app-wujie-angular-root .edition {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+}
+#app-wujie-angular-root .hero-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  align-items: center;
+  gap: 30px;
+}
+#app-wujie-angular-root .hero h1 {
+  font-size: clamp(44px, 4.5vw, 72px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -3px;
+}
+#app-wujie-angular-root .hero-copy > p {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.95;
+}
+#app-wujie-angular-root .hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 32px;
+}
+#app-wujie-angular-root .hero-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 11px;
+}
+#app-wujie-angular-root .note-line {
+  height: 1px;
+  width: 24px;
+  background: #c5a5ae;
+}
+#app-wujie-angular-root .hero-art {
+  position: relative;
+  height: 420px;
+  background: #fce8ed;
+  border-radius: 10px;
+  overflow: hidden;
+  isolation: isolate;
+}
+#app-wujie-angular-root .art-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#dd003108 1px, transparent 1px),
+    linear-gradient(90deg, #dd003108 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+#app-wujie-angular-root .art-ring {
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  border: 1px solid #dd003128;
+  border-radius: 50%;
+  right: -45px;
+  top: 18px;
+}
+#app-wujie-angular-root .art-ring::after {
+  content: "";
+  position: absolute;
+  inset: 25px;
+  border: 1px solid #dd003118;
+  border-radius: 50%;
+}
+#app-wujie-angular-root .angular-sculpture {
+  position: absolute;
+  right: 30px;
+  top: 0;
+  font-size: 270px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.2;
+  color: var(--red);
+  text-shadow: 8px 10px 0 #b5002b;
+  transform: rotate(-12deg);
+}
+#app-wujie-angular-root .art-corner {
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  color: #a44b60;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+#app-wujie-angular-root .art-card {
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+  width: 225px;
+  padding: 22px;
+  background: #fffdfd;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: 0 18px 50px #6e13251c;
+  transform: rotate(-7deg);
+}
+#app-wujie-angular-root .art-card > strong {
+  display: block;
+  font-size: 35px;
+  letter-spacing: -1px;
+  line-height: 1.4;
+  margin: 20px 0;
+}
+#app-wujie-angular-root .art-card .eyebrow {
+  justify-content: space-between;
+  font-size: 9px;
+}
+#app-wujie-angular-root .art-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+#app-wujie-angular-root .art-card-bottom > span:last-child {
+  color: var(--red);
+  font-size: 24px;
+}
+#app-wujie-angular-root .art-caption {
+  position: absolute;
+  bottom: 18px;
+  right: 20px;
+  color: #a44b60;
+  font-size: 9px;
+  letter-spacing: 1.3px;
+}
+#app-wujie-angular-root .intro-strip {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0;
+  gap: 28px;
+}
+#app-wujie-angular-root .intro-strip > p {
+  font-size: 13px;
+  color: var(--muted);
+}
+#app-wujie-angular-root .intro-strip > p strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+#app-wujie-angular-root .intro-strip > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-left: 1px solid var(--line);
+  padding-left: 28px;
+}
+#app-wujie-angular-root .intro-strip > div strong {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--red);
+}
+#app-wujie-angular-root .intro-strip > div span {
+  font-size: 12px;
+  color: var(--muted);
+}
+#app-wujie-angular-root .home-explore {
+  padding: 64px 0;
+}
+#app-wujie-angular-root .section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+#app-wujie-angular-root .section-heading h2 {
+  margin-top: 15px;
+  font-size: 32px;
+  line-height: 1.45;
+  letter-spacing: -1px;
+}
+#app-wujie-angular-root .section-heading > p {
+  color: var(--muted);
+  font-size: 13px;
+}
+#app-wujie-angular-root .explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+#app-wujie-angular-root .explore-card {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+#app-wujie-angular-root .explore-card:hover {
+  border-color: var(--red);
+  transform: translateY(-3px);
+}
+#app-wujie-angular-root .explore-card .eyebrow {
+  font-size: 9px;
+}
+#app-wujie-angular-root .explore-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 25px 0 12px;
+}
+#app-wujie-angular-root .explore-card p {
+  font-size: 13px;
+  color: var(--muted);
+  min-height: 46px;
+}
+#app-wujie-angular-root .card-link {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  font-size: 12px;
+}
+#app-wujie-angular-root .card-link b {
+  color: var(--red);
+}
+#app-wujie-angular-root .handbook-promo {
+  background: var(--rose);
+  border-color: #f2ccd5;
+}
+#app-wujie-angular-root .footer {
+  border-top: 1px solid var(--line);
+  padding: 26px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 11px;
+}
+#app-wujie-angular-root .footer .brand {
+  font-size: 14px;
+  color: var(--ink);
+}
+#app-wujie-angular-root .footer > span:last-child {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+#app-wujie-angular-root .page-section {
+  padding: 55px 0 70px;
+}
+#app-wujie-angular-root .page-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 20px 0 45px;
+}
+#app-wujie-angular-root .page-heading h1 {
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.35;
+  letter-spacing: -2px;
+}
+#app-wujie-angular-root .page-heading > p {
+  color: var(--muted);
+  font-size: 14px;
+}
+#app-wujie-angular-root .products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+#app-wujie-angular-root .product-card {
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff4f5;
+}
+#app-wujie-angular-root .product-card:nth-child(2) {
+  background: #f9f5f2;
+}
+#app-wujie-angular-root .product-card:nth-child(3) {
+  background: #f8eff1;
+}
+#app-wujie-angular-root .product-symbol {
+  font-size: 70px;
+  color: var(--red);
+  padding: 25px 0;
+  line-height: 1.2;
+}
+#app-wujie-angular-root .product-card h2 {
+  font-size: 24px;
+}
+#app-wujie-angular-root .product-card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 15px 0 25px;
+}
+#app-wujie-angular-root .badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 10px;
+  white-space: nowrap;
+}
+#app-wujie-angular-root .footnote {
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 13px;
+}
+#app-wujie-angular-root .steps article {
+  display: grid;
+  grid-template-columns: 50px 1fr 1.8fr 20px;
+  align-items: center;
+  gap: 22px;
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+}
+#app-wujie-angular-root .steps article > span {
+  font-size: 24px;
+  color: var(--red);
+}
+#app-wujie-angular-root .steps h2 {
+  font-size: 20px;
+}
+#app-wujie-angular-root .steps p {
+  color: var(--muted);
+  font-size: 14px;
+}
+#app-wujie-angular-root blockquote {
+  margin: 35px 0 0;
+  padding: 40px;
+  background: var(--rose);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 23px;
+}
+#app-wujie-angular-root blockquote cite {
+  display: block;
+  font-size: 12px;
+  font-style: normal;
+  margin-top: 16px;
+  color: var(--muted);
+}
+#app-wujie-angular-root .about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 55px;
+  align-items: center;
+}
+#app-wujie-angular-root .about-art {
+  min-height: 350px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  background: var(--red);
+  border-radius: 8px;
+}
+#app-wujie-angular-root .about-art span {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+#app-wujie-angular-root .about-art strong {
+  font-size: 160px;
+  align-self: center;
+  line-height: 1.4;
+  font-weight: 400;
+}
+#app-wujie-angular-root .story h2 {
+  font-size: 30px;
+  margin: 16px 0;
+}
+#app-wujie-angular-root .story > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+#app-wujie-angular-root .story .text-link {
+  color: var(--red);
+}
+#app-wujie-angular-root .values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+#app-wujie-angular-root .values span {
+  color: var(--red);
+  font-size: 12px;
+}
+#app-wujie-angular-root .values h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+#app-wujie-angular-root .values p {
+  color: var(--muted);
+  font-size: 13px;
+}
+#app-wujie-angular-root .contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+}
+#app-wujie-angular-root .contact-info {
+  background: var(--rose);
+  padding: 35px;
+  border-radius: 8px;
+}
+#app-wujie-angular-root .contact-info h2 {
+  font-size: 30px;
+  margin: 25px 0;
+}
+#app-wujie-angular-root .contact-info > p:not(.eyebrow) {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+#app-wujie-angular-root .contact-star {
+  display: block;
+  font-size: 95px;
+  color: var(--red);
+  line-height: 1;
+  margin-top: 40px;
+}
+#app-wujie-angular-root .contact-form {
+  display: grid;
+  gap: 20px;
+}
+#app-wujie-angular-root .contact-form label {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+}
+#app-wujie-angular-root
+  :is(.contact-form input, .contact-form textarea, .demo-controls input) {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: white;
+  width: 100%;
+  min-width: 0;
+  color: var(--ink);
+}
+#app-wujie-angular-root .contact-form textarea {
+  resize: vertical;
+}
+#app-wujie-angular-root .contact-form small {
+  color: var(--muted);
+  font-size: 11px;
+}
+#app-wujie-angular-root .form-error {
+  color: var(--red-dark);
+  font-size: 13px;
+}
+#app-wujie-angular-root .form-success {
+  padding: 12px;
+  background: var(--rose);
+  color: var(--red-dark);
+  font-size: 13px;
+  border-radius: 5px;
+}
+#app-wujie-angular-root .handbook {
+  display: grid;
+  grid-template-columns: 225px minmax(0, 1fr);
+  gap: 36px;
+}
+#app-wujie-angular-root .book-sidebar {
+  padding: 35px 22px 35px 0;
+  border-right: 1px solid var(--line);
+}
+#app-wujie-angular-root .book-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+#app-wujie-angular-root .book-brand strong {
+  font-size: 22px;
+  line-height: 1.2;
+}
+#app-wujie-angular-root .book-brand small {
+  display: block;
+  font-size: 8px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+#app-wujie-angular-root .book-sidebar > .eyebrow {
+  font-size: 9px;
+}
+#app-wujie-angular-root .book-tabs {
+  display: grid;
+  gap: 7px;
+  margin-top: 15px;
+}
+#app-wujie-angular-root .book-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  text-align: left;
+}
+#app-wujie-angular-root .book-tabs button:hover {
+  background: #faf2f4;
+}
+#app-wujie-angular-root .book-tabs button[aria-pressed="true"] {
+  background: var(--rose);
+  color: var(--red);
+  border-color: #f3d4dc;
+}
+#app-wujie-angular-root .book-tabs strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+#app-wujie-angular-root .book-tabs small {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+#app-wujie-angular-root .tab-number {
+  color: #aa8792;
+  font-size: 10px;
+}
+#app-wujie-angular-root .tab-count {
+  margin-left: auto;
+  font-size: 10px;
+}
+#app-wujie-angular-root .book-sidebar-note {
+  margin-top: 60px;
+  font-size: 11px;
+  color: var(--muted);
+}
+#app-wujie-angular-root .book-sidebar-note .red-dot {
+  margin-right: 7px;
+}
+#app-wujie-angular-root .book-sidebar-note p {
+  margin: 12px 0 24px;
+  font-size: 10px;
+}
+#app-wujie-angular-root .book-sidebar-note a {
+  color: var(--ink);
+}
+#app-wujie-angular-root .book-main {
+  min-width: 0;
+  padding: 35px 0;
+}
+#app-wujie-angular-root .book-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+#app-wujie-angular-root .book-topline .eyebrow {
+  font-size: 9px;
+}
+#app-wujie-angular-root .book-topline .badge {
+  font-size: 8px;
+}
+#app-wujie-angular-root .book-main h1 {
+  font-size: 35px;
+  letter-spacing: -1px;
+  margin-top: 12px;
+}
+#app-wujie-angular-root .book-intro {
+  color: var(--muted);
+  margin: 4px 0 30px;
+  font-size: 13px;
+}
+#app-wujie-angular-root .book-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding: 25px 0;
+}
+#app-wujie-angular-root .book-heading h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+#app-wujie-angular-root .book-heading p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 520px;
+}
+#app-wujie-angular-root .chapter-count {
+  font-size: 32px;
+  color: var(--red);
+  text-align: right;
+  line-height: 1.3;
+}
+#app-wujie-angular-root .chapter-count small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+#app-wujie-angular-root .book-tools {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+#app-wujie-angular-root .search-field {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 13px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  min-width: 0;
+  background: white;
+}
+#app-wujie-angular-root .search-field > span:not(.sr-only) {
+  font-size: 22px;
+  color: var(--muted);
+  line-height: 1;
+}
+#app-wujie-angular-root .search-field input {
+  border: none;
+  outline: none;
+  width: 100%;
+  min-width: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+}
+#app-wujie-angular-root .search-field:focus-within {
+  border-color: var(--red);
+  box-shadow: 0 0 0 2px #dd003114;
+}
+#app-wujie-angular-root kbd {
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0 6px;
+  color: var(--muted);
+  font-size: 10px;
+}
+#app-wujie-angular-root .level-select select {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 12px;
+  background: white;
+  color: var(--ink);
+}
+#app-wujie-angular-root .result-count {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+#app-wujie-angular-root .book-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 15px 0 25px;
+}
+#app-wujie-angular-root .book-filters button {
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+#app-wujie-angular-root .book-filters button[aria-pressed="true"] {
+  background: var(--red);
+  color: white;
+  border-color: var(--red);
+}
+#app-wujie-angular-root .demo-panel {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 24px;
+  padding: 22px;
+  background: var(--rose);
+  border: 1px solid #f3d4dc;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+#app-wujie-angular-root .demo-panel .eyebrow {
+  font-size: 9px;
+}
+#app-wujie-angular-root .demo-panel h3 {
+  font-size: 17px;
+  margin: 10px 0 6px;
+}
+#app-wujie-angular-root .demo-panel p {
+  color: var(--muted);
+  font-size: 12px;
+}
+#app-wujie-angular-root .demo-controls input {
+  font-size: 12px;
+  padding: 9px 10px;
+}
+#app-wujie-angular-root .demo-controls > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+#app-wujie-angular-root .demo-controls button {
+  font-size: 11px;
+  padding: 6px 10px;
+  border: 1px solid var(--red);
+  border-radius: 4px;
+  color: white;
+  background: var(--red);
+}
+#app-wujie-angular-root .demo-controls .quiet {
+  background: transparent;
+  color: var(--red);
+  border-color: transparent;
+}
+#app-wujie-angular-root .entry {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  margin-bottom: 20px;
+  background: white;
+  overflow: hidden;
+}
+#app-wujie-angular-root .entry-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+}
+#app-wujie-angular-root .entry-number {
+  color: var(--red);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+#app-wujie-angular-root .entry-heading h3 {
+  flex: 1;
+  font-size: 16px;
+  min-width: 140px;
+  line-height: 1.6;
+}
+#app-wujie-angular-root .entry-heading .badge {
+  font-size: 9px;
+  padding: 2px 7px;
+}
+#app-wujie-angular-root .difficulty {
+  padding: 2px 7px;
+  color: #8c4d24;
+  background: #fff4df;
+  font-size: 9px;
+  border-radius: 3px;
+}
+#app-wujie-angular-root .difficulty[data-level="高级"] {
+  color: #b5002b;
+  background: #fff0f3;
+}
+#app-wujie-angular-root .difficulty[data-level="专家"] {
+  color: white;
+  background: #a81537;
+}
+#app-wujie-angular-root .entry-prompt {
+  color: var(--muted);
+  font-size: 13px;
+  padding: 0 20px 22px;
+}
+#app-wujie-angular-root .entry-details > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  background: #fffbfc;
+  border-top: 1px solid var(--line);
+  padding: 12px 20px;
+  font-size: 12px;
+  color: var(--red-dark);
+}
+#app-wujie-angular-root .entry-details > summary::-webkit-details-marker {
+  display: none;
+}
+#app-wujie-angular-root .entry-details > summary b {
+  font-size: 18px;
+  font-weight: 400;
+}
+#app-wujie-angular-root .entry-details[open] > summary b {
+  transform: rotate(45deg);
+}
+#app-wujie-angular-root .entry-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  padding: 22px 20px;
+  align-items: start;
+}
+#app-wujie-angular-root .entry-explanation {
+  font-size: 12px;
+}
+#app-wujie-angular-root .entry-explanation ul {
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin: 14px 0;
+}
+#app-wujie-angular-root .entry-explanation li + li {
+  margin-top: 6px;
+}
+#app-wujie-angular-root .takeaway {
+  padding: 12px;
+  border-left: 2px solid var(--red);
+  background: var(--rose);
+  font-size: 11px;
+}
+#app-wujie-angular-root .takeaway strong {
+  color: var(--red-dark);
+  font-size: 10px;
+}
+#app-wujie-angular-root .takeaway p {
+  margin-top: 4px;
+}
+#app-wujie-angular-root .source-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--red);
+  font-size: 11px;
+}
+#app-wujie-angular-root .code-block {
+  min-width: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #2b2026;
+  color: #f6dce3;
+}
+#app-wujie-angular-root .code-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-bottom: 1px solid #ffffff14;
+  font-size: 9px;
+  color: #c5a6b0;
+}
+#app-wujie-angular-root .code-topbar button {
+  border: 1px solid #ffffff30;
+  border-radius: 3px;
+  background: transparent;
+  color: #f9dce4;
+  font-size: 10px;
+  padding: 2px 8px;
+}
+#app-wujie-angular-root .code-block pre {
+  overflow-x: auto;
+  margin: 0;
+  padding: 16px;
+  font-size: 11px;
+  line-height: 1.9;
+  tab-size: 2;
+}
+#app-wujie-angular-root .code-block code {
+  font-family: "SFMono-Regular", Consolas, monospace;
+}
+#app-wujie-angular-root .copy-status {
+  padding: 0 12px 12px;
+  font-size: 10px;
+}
+#app-wujie-angular-root .review-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  padding: 20px;
+  border-top: 1px solid var(--line);
+  background: #fffbfc;
+  font-size: 12px;
+}
+#app-wujie-angular-root .review-grid h4 {
+  color: var(--red-dark);
+  font-size: 11px;
+}
+#app-wujie-angular-root .review-grid :is(ul, ol) {
+  padding-left: 18px;
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+#app-wujie-angular-root .empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+}
+#app-wujie-angular-root .empty-state > span {
+  font-size: 40px;
+  color: var(--red);
+}
+#app-wujie-angular-root .empty-state h3 {
+  font-size: 18px;
+}
+#app-wujie-angular-root .empty-state p {
+  margin: 12px 0 22px;
+  font-size: 13px;
+  color: var(--muted);
+}
+#app-wujie-angular-root .book-footnote {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 25px;
+}
+@media (max-width: 1100px) {
+  #app-wujie-angular-root .studio-shell {
+    padding: 0 30px;
+  }
+  #app-wujie-angular-root .topbar {
+    gap: 18px;
+  }
+  #app-wujie-angular-root .main-nav {
+    gap: 18px;
+  }
+  #app-wujie-angular-root .hero-art {
+    height: 380px;
+  }
+  #app-wujie-angular-root .hero h1 {
+    font-size: 50px;
+  }
+  #app-wujie-angular-root .intro-strip {
+    gap: 18px;
+  }
+  #app-wujie-angular-root .intro-strip > div {
+    padding-left: 18px;
+    gap: 12px;
+  }
+  #app-wujie-angular-root .intro-strip > div span {
+    max-width: 75px;
+  }
+  #app-wujie-angular-root .handbook {
+    grid-template-columns: 195px minmax(0, 1fr);
+    gap: 24px;
+  }
+  #app-wujie-angular-root .book-sidebar {
+    padding-right: 16px;
+  }
+  #app-wujie-angular-root .book-tabs button {
+    padding: 12px 8px;
+    gap: 7px;
+  }
+  #app-wujie-angular-root .book-tabs small {
+    font-size: 8px;
+  }
+  #app-wujie-angular-root .entry-body {
+    grid-template-columns: 1fr;
+  }
+  #app-wujie-angular-root .demo-panel {
+    grid-template-columns: 1fr;
+  }
+  #app-wujie-angular-root .demo-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  #app-wujie-angular-root .demo-controls > div {
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+  #app-wujie-angular-root .explore-card {
+    padding: 22px;
+  }
+}
+@media (max-width: 800px) {
+  #app-wujie-angular-root .topbar {
+    flex-wrap: wrap;
+    padding: 20px 0 12px;
+    row-gap: 12px;
+  }
+  #app-wujie-angular-root .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 38px;
+  }
+  #app-wujie-angular-root .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  #app-wujie-angular-root .hero h1 {
+    font-size: 54px;
+  }
+  #app-wujie-angular-root .hero-art {
+    height: 330px;
+  }
+  #app-wujie-angular-root .angular-sculpture {
+    right: 18%;
+  }
+  #app-wujie-angular-root .art-card {
+    left: 12%;
+    bottom: 35px;
+  }
+  #app-wujie-angular-root .hero-note {
+    margin-top: 28px;
+  }
+  #app-wujie-angular-root .intro-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #app-wujie-angular-root .intro-strip > p {
+    grid-column: 1 / -1;
+  }
+  #app-wujie-angular-root .intro-strip > div {
+    padding-left: 12px;
+  }
+  #app-wujie-angular-root .explore-grid {
+    grid-template-columns: 1fr;
+  }
+  #app-wujie-angular-root .explore-card p {
+    min-height: 0;
+  }
+  #app-wujie-angular-root .explore-card h3 {
+    margin-top: 16px;
+  }
+  #app-wujie-angular-root .products-grid {
+    gap: 12px;
+  }
+  #app-wujie-angular-root .product-card {
+    padding: 22px;
+  }
+  #app-wujie-angular-root .steps article {
+    grid-template-columns: 40px 1fr 20px;
+    gap: 14px;
+  }
+  #app-wujie-angular-root .steps article p {
+    grid-column: 2;
+  }
+  #app-wujie-angular-root .steps article b {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  #app-wujie-angular-root .about-grid,
+  #app-wujie-angular-root .contact-grid {
+    gap: 28px;
+  }
+  #app-wujie-angular-root .about-art {
+    min-height: 330px;
+  }
+  #app-wujie-angular-root .handbook {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  #app-wujie-angular-root .book-sidebar {
+    padding: 24px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  #app-wujie-angular-root .book-sidebar > .eyebrow,
+  #app-wujie-angular-root .book-sidebar-note,
+  #app-wujie-angular-root .book-brand {
+    display: none;
+  }
+  #app-wujie-angular-root .book-tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 7px;
+    margin: 0;
+  }
+  #app-wujie-angular-root .book-tabs button {
+    justify-content: center;
+    padding: 10px 7px;
+  }
+  #app-wujie-angular-root .book-tabs small,
+  #app-wujie-angular-root .tab-number {
+    display: none;
+  }
+  #app-wujie-angular-root .tab-count {
+    margin-left: 0;
+  }
+  #app-wujie-angular-root .footer > span:last-child {
+    display: none;
+  }
+}
+@media (max-width: 540px) {
+  #app-wujie-angular-root .studio-shell {
+    padding: 0 20px;
+  }
+  #app-wujie-angular-root .brand {
+    font-size: 16px;
+    gap: 7px;
+  }
+  #app-wujie-angular-root .brand-mark {
+    width: 27px;
+    height: 31px;
+    font-size: 22px;
+  }
+  #app-wujie-angular-root .nav-handbook {
+    font-size: 10px;
+    padding: 8px;
+  }
+  #app-wujie-angular-root .nav-handbook span {
+    margin-left: 3px;
+  }
+  #app-wujie-angular-root .main-nav {
+    gap: 0;
+    justify-content: space-between;
+  }
+  #app-wujie-angular-root .main-nav a {
+    font-size: 13px;
+  }
+  #app-wujie-angular-root .hero {
+    padding-top: 24px;
+  }
+  #app-wujie-angular-root .hero-topline {
+    margin-bottom: 25px;
+  }
+  #app-wujie-angular-root .edition {
+    display: none;
+  }
+  #app-wujie-angular-root .hero h1 {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+  #app-wujie-angular-root .hero-copy > p {
+    font-size: 14px;
+  }
+  #app-wujie-angular-root .hero-actions {
+    gap: 18px;
+  }
+  #app-wujie-angular-root .hero-actions .text-link {
+    font-size: 12px;
+  }
+  #app-wujie-angular-root .hero-note {
+    font-size: 10px;
+  }
+  #app-wujie-angular-root .hero-art {
+    height: 320px;
+  }
+  #app-wujie-angular-root .angular-sculpture {
+    right: 10px;
+    font-size: 235px;
+  }
+  #app-wujie-angular-root .art-card {
+    left: 22px;
+    width: 195px;
+    padding: 18px;
+  }
+  #app-wujie-angular-root .art-card > strong {
+    font-size: 29px;
+    margin: 18px 0;
+  }
+  #app-wujie-angular-root .intro-strip {
+    gap: 16px 9px;
+  }
+  #app-wujie-angular-root .intro-strip > div {
+    display: grid;
+    gap: 4px;
+  }
+  #app-wujie-angular-root .intro-strip > div strong {
+    font-size: 27px;
+  }
+  #app-wujie-angular-root .intro-strip > div span {
+    font-size: 10px;
+    max-width: none;
+  }
+  #app-wujie-angular-root .section-heading {
+    display: block;
+  }
+  #app-wujie-angular-root .section-heading > p {
+    margin-top: 20px;
+  }
+  #app-wujie-angular-root .home-explore {
+    padding: 40px 0;
+  }
+  #app-wujie-angular-root .section-heading h2 {
+    font-size: 29px;
+  }
+  #app-wujie-angular-root .page-section {
+    padding: 35px 0 45px;
+  }
+  #app-wujie-angular-root .page-heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+  #app-wujie-angular-root .page-heading h1 {
+    font-size: 34px;
+  }
+  #app-wujie-angular-root .page-heading > p {
+    margin-top: 20px;
+  }
+  #app-wujie-angular-root .products-grid,
+  #app-wujie-angular-root .about-grid,
+  #app-wujie-angular-root .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  #app-wujie-angular-root .product-symbol {
+    padding: 20px 0;
+  }
+  #app-wujie-angular-root .steps h2 {
+    font-size: 18px;
+  }
+  #app-wujie-angular-root blockquote {
+    padding: 28px 20px;
+    font-size: 20px;
+  }
+  #app-wujie-angular-root .values {
+    gap: 14px;
+  }
+  #app-wujie-angular-root .values h3 {
+    font-size: 15px;
+  }
+  #app-wujie-angular-root .values p {
+    font-size: 11px;
+  }
+  #app-wujie-angular-root .contact-info {
+    padding: 28px;
+  }
+  #app-wujie-angular-root .contact-star {
+    font-size: 70px;
+  }
+  #app-wujie-angular-root .book-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #app-wujie-angular-root .book-tabs button {
+    justify-content: start;
+    padding: 12px;
+  }
+  #app-wujie-angular-root .tab-count {
+    margin-left: auto;
+  }
+  #app-wujie-angular-root .book-topline .badge {
+    display: none;
+  }
+  #app-wujie-angular-root .book-main h1 {
+    font-size: 29px;
+  }
+  #app-wujie-angular-root .book-tools {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #app-wujie-angular-root .search-field {
+    flex-basis: 100%;
+  }
+  #app-wujie-angular-root .result-count {
+    margin-left: auto;
+  }
+  #app-wujie-angular-root .demo-panel {
+    padding: 18px;
+    gap: 18px;
+  }
+  #app-wujie-angular-root .demo-controls {
+    display: block;
+  }
+  #app-wujie-angular-root .demo-controls > div {
+    margin-top: 12px;
+  }
+  #app-wujie-angular-root .entry-heading {
+    padding: 16px;
+    gap: 8px;
+  }
+  #app-wujie-angular-root .entry-heading h3 {
+    font-size: 15px;
+    flex-basis: calc(100% - 30px);
+  }
+  #app-wujie-angular-root .entry-prompt {
+    padding: 0 16px 16px;
+    font-size: 12px;
+  }
+  #app-wujie-angular-root .entry-body {
+    padding: 16px;
+    gap: 18px;
+  }
+  #app-wujie-angular-root .review-grid {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  #app-wujie-angular-root .footer {
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #app-wujie-angular-root * {
+    transition: none !important;
+  }
+}

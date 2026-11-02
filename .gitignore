@@ -1,0 +1,13 @@
+# 各应用独立安装的第三方依赖。
+node_modules/
+# 各应用的构建产物，包括主应用按 engine 划分的输出目录。
+dist/
+# 测试编译输出等可重新生成的缓存。
+.cache/
+# TypeScript 增量编译元数据。
+*.tsbuildinfo
+# macOS 自动生成的目录元数据。
+.DS_Store
+# React 源码保留在仓库内；仅忽略本地编译结果和上游安装生成文件。
+apps/app-react-source/vendor/react/build/
+apps/app-react-source/vendor/react/.yarn-integrity

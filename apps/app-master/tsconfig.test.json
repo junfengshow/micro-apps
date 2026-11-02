@@ -1,0 +1,21 @@
+{
+  // 继承应用类型检查规则，下方仅覆盖 Node 测试所需的选项。
+  "extends": "./tsconfig.json",
+  // 将生命周期测试及其依赖编译为可由 Node 直接执行的文件。
+  "compilerOptions": {
+    // 测试输出使用 CommonJS，与本应用的 Node 执行方式保持一致。
+    "module": "CommonJS",
+    // 测试使用 Node 模块解析规则，不依赖前端打包器。
+    "moduleResolution": "Node",
+    // 覆盖应用的 noEmit，实际输出 JS 后再运行测试。
+    "noEmit": false,
+    // 测试编译结果写入可清理的缓存目录，供 node --test 执行。
+    "outDir": ".cache/tests",
+    // 以应用目录为源码根目录，在输出中保留 tests/ 和 src/ 的相对结构。
+    "rootDir": ".",
+    // 加载 Node 内置模块和测试 API 的类型声明。
+    "types": ["node"]
+  },
+  // 只编译测试与生命周期调度的依赖，避免引入浏览器 UI 和引擎包。
+  "include": ["tests/**/*.ts", "src/micro/lifecycle.ts", "src/micro/types.ts"]
+}

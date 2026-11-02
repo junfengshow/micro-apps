@@ -1,0 +1,114 @@
+:root {
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #172a38;
+  background: #f3f6f7;
+  font-synthesis: none;
+  line-height: 1.65;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  width: min(1040px, 100%);
+  padding: 48px 28px 64px;
+  margin: auto;
+}
+header {
+  padding: 16px 0 28px;
+}
+.eyebrow {
+  color: #167469;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 700;
+}
+h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: -0.04em;
+  margin: 12px 0;
+}
+h2 {
+  font-size: 20px;
+  margin-top: 0;
+}
+p {
+  color: #526570;
+}
+section {
+  margin: 16px 0;
+  padding: 26px;
+  border: 1px solid #dce5e8;
+  border-radius: 16px;
+  background: white;
+}
+.metadata {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 20px;
+  background: #173c3b;
+  color: white;
+  border: 0;
+}
+small,
+strong {
+  display: block;
+}
+small {
+  color: #b4d3cd;
+  margin-bottom: 8px;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+button {
+  background: #167469;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font: inherit;
+}
+button:hover {
+  background: #125e55;
+}
+button:focus-visible {
+  outline: 3px solid #53b7ad;
+  outline-offset: 3px;
+}
+button.secondary {
+  color: #24464b;
+  background: #edf3f3;
+  border-color: #dce5e8;
+}
+.effect {
+  border-left: 3px solid #167469;
+  padding-left: 14px;
+}
+pre {
+  background: #edf3f3;
+  padding: 18px;
+  border-radius: 8px;
+  overflow: auto;
+}
+code,
+pre {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 13px;
+}
+@media (max-width: 640px) {
+  main {
+    padding: 24px 16px;
+  }
+  section {
+    padding: 20px;
+  }
+  .metadata {
+    grid-template-columns: 1fr;
+  }
+}

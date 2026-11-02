@@ -1,0 +1,76 @@
+#app-vite-react-root .solution-list {
+  border-top: 1px solid var(--line);
+}
+#app-vite-react-root .solution-step {
+  min-height: 113px;
+  display: grid;
+  grid-template-columns: 0.4fr 1.2fr 1.5fr 30px;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+}
+#app-vite-react-root .step-number {
+  align-self: center;
+  color: #85916f;
+  font-size: 11px;
+}
+#app-vite-react-root .solution-step h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+#app-vite-react-root .solution-step p {
+  max-width: 330px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+#app-vite-react-root .step-arrow {
+  justify-self: end;
+  font-size: 17px;
+}
+#app-vite-react-root .quote-card {
+  margin-top: 46px;
+  padding: 28px 34px;
+  background: #e7ecd9;
+  text-align: center;
+}
+#app-vite-react-root .quote-mark {
+  display: block;
+  height: 32px;
+  color: #819b4c;
+  font-family: Georgia, serif;
+  font-size: 48px;
+  line-height: 1;
+}
+#app-vite-react-root .quote-card p {
+  margin: 8px 0 9px;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+#app-vite-react-root .quote-card > span:last-child {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+@media (max-width: 560px) {
+  #app-vite-react-root .solution-step {
+    grid-template-columns: 32px 1fr 22px;
+    gap: 10px;
+    padding: 18px 0;
+  }
+  #app-vite-react-root .solution-step h2 {
+    font-size: 14px;
+  }
+  #app-vite-react-root .solution-step p {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  #app-vite-react-root .step-arrow {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}

@@ -1,0 +1,27 @@
+{
+  // 编译与类型检查选项；最终打包由 Webpack 或 Vite 完成。
+  "compilerOptions": {
+    // 保留 ES2022 级别的语法，面向支持这些特性的现代运行环境。
+    "target": "ES2022",
+    // 提供浏览器 DOM、可迭代 DOM 集合与 ES2022 标准库的类型声明。
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    // 保留 ES 模块语法，将依赖分析和分包交给构建工具。
+    "module": "ESNext",
+    // 按打包工具的方式解析模块导入，与前端构建流程保持一致。
+    "moduleResolution": "Bundler",
+    // 使用 React 自动 JSX 运行时，无需仅为 JSX 手动导入 React。
+    "jsx": "react-jsx",
+    // 开启严格类型检查，包括空值和隐式 any 检查。
+    "strict": true,
+    // 兼容 CommonJS 依赖的默认导入写法。
+    "esModuleInterop": true,
+    // 跳过依赖声明文件内部的类型检查，减少第三方类型带来的检查开销。
+    "skipLibCheck": true,
+    // 要求每个文件可独立转译，与 ts-loader/Vite 的逐文件处理方式兼容。
+    "isolatedModules": true,
+    // 默认只检查类型，不写出 JS；Webpack 的 ts-loader 在自身配置中覆盖此项。
+    "noEmit": true
+  },
+  // 只检查应用源码及其导入的文件，不直接扫描构建产物。
+  "include": ["src"]
+}

@@ -1,0 +1,176 @@
+#app-vite-react-root {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Microsoft YaHei", sans-serif;
+  color: #20231f;
+  background: #f4f5f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --ink: #20231f;
+  --muted: #777d75;
+  --line: #e2e5de;
+  --lime: #c9ee58;
+  --paper: #fbfcf9;
+  display: flow-root;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app-vite-react-root * {
+  box-sizing: border-box;
+}
+body:has(> #app-vite-react-root) {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+#app-vite-react-root a {
+  color: inherit;
+  text-decoration: none;
+}
+#app-vite-react-root button,
+#app-vite-react-root input,
+#app-vite-react-root textarea {
+  font: inherit;
+}
+#app-vite-react-root button,
+#app-vite-react-root a {
+  -webkit-tap-highlight-color: transparent;
+}
+#app-vite-react-root .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 25px;
+  color: #656c62;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+#app-vite-react-root .eyebrow > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #9ec72e;
+}
+#app-vite-react-root h1,
+#app-vite-react-root h2,
+#app-vite-react-root p {
+  margin-top: 0;
+}
+#app-vite-react-root .hero h1,
+#app-vite-react-root .section-page h1 {
+  margin-bottom: 24px;
+  font-size: clamp(48px, 6vw, 76px);
+  font-weight: 600;
+  letter-spacing: -0.075em;
+  line-height: 1.17;
+}
+#app-vite-react-root .accent-text {
+  color: #7b9d22;
+}
+#app-vite-react-root .button {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 20px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+#app-vite-react-root .button:hover {
+  transform: translateY(-2px);
+}
+#app-vite-react-root .button-dark {
+  background: var(--ink);
+  color: white;
+}
+#app-vite-react-root .button-dark:hover {
+  background: #3c4437;
+}
+#app-vite-react-root .button span {
+  color: var(--lime);
+  font-size: 17px;
+}
+#app-vite-react-root .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 600;
+}
+#app-vite-react-root .text-link:hover {
+  color: #7b9d22;
+}
+#app-vite-react-root .mini-label {
+  color: #757d6e;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+#app-vite-react-root .section-description {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+#app-vite-react-root .section-page {
+  padding: 76px 38px 88px;
+}
+#app-vite-react-root .section-page .eyebrow {
+  margin-bottom: 22px;
+}
+#app-vite-react-root .page-heading-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 58px;
+}
+#app-vite-react-root .section-page h1 {
+  margin-bottom: 0;
+  font-size: clamp(43px, 5.4vw, 66px);
+}
+#app-vite-react-root .page-lede {
+  max-width: 280px;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+#app-vite-react-root .page-footnote {
+  margin: 23px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+@media (max-width: 800px) {
+  #app-vite-react-root .section-page {
+    padding: 60px 0 70px;
+  }
+}
+
+@media (max-width: 560px) {
+  #app-vite-react-root .page-heading-row {
+    display: block;
+    margin-bottom: 35px;
+  }
+  #app-vite-react-root .section-page h1 {
+    margin-bottom: 18px;
+    font-size: 45px;
+  }
+  #app-vite-react-root .page-lede {
+    max-width: 310px;
+  }
+}

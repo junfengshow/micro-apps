@@ -1,0 +1,46 @@
+{
+  "name": "@micro-apps/app-wujie-angular",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "build": "npm run typecheck && webpack --mode production",
+    "typecheck": "ngc --noEmit",
+    "format": "prettier --config .prettierrc --ignore-path .prettierignore --write .",
+    "format:check": "prettier --config .prettierrc --ignore-path .prettierignore --check .",
+    "test": "npm run build && node --test tests/*.test.cjs"
+  },
+  "dependencies": {
+    "@angular/common": "22.2.4",
+    "@angular/core": "22.2.4",
+    "@angular/forms": "22.2.4",
+    "@angular/platform-browser": "22.2.4",
+    "@angular/router": "22.2.4",
+    "rxjs": "^7.8.2",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.0",
+    "prettier": "^3.3.3",
+    "style-loader": "^4.0.0",
+    "typescript": "~6.0.2",
+    "webpack": "^5.100.0",
+    "webpack-cli": "^6.0.0",
+    "webpack-dev-server": "^5.2.0",
+    "jsdom": "^26.1.0",
+    "@angular/compiler": "22.2.4",
+    "@angular/compiler-cli": "22.2.4",
+    "@ngtools/webpack": "22.2.5",
+    "@babel/core": "^8.0.10",
+    "babel-loader": "^10.0.0"
+  },
+  "engines": {
+    "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+  },
+  "overrides": {
+    "sockjs": {
+      "uuid": "^11.1.1"
+    }
+  }
+}

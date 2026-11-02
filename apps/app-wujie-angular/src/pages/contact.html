@@ -1,0 +1,60 @@
+<section class="page-section">
+  <p class="eyebrow">04 / SAY HELLO</p>
+  <div class="page-heading">
+    <h1>下一件有趣的事，<br /><span class="accent">从这里开始。</span></h1>
+    <p>有想法、有问题，<br />或者只是想打个招呼？</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p class="eyebrow">LET'S MAKE SOMETHING GOOD</p>
+      <h2>好想法，<br />值得一次对话。</h2>
+      <p>写下你的想法，试试这份演示表单。</p>
+      <a href="mailto:hello@example.com" class="text-link"
+        >hello&#64;example.com ↗</a
+      ><span class="contact-star" aria-hidden="true">✳</span>
+    </div>
+    <form
+      [formGroup]="form"
+      class="contact-form"
+      (ngSubmit)="submit()"
+      novalidate
+    >
+      <label
+        >怎么称呼你？<input
+          name="name"
+          formControlName="name"
+          autocomplete="name"
+          placeholder="你的名字"
+          required /></label
+      ><label
+        >联系邮箱<input
+          name="email"
+          formControlName="email"
+          type="email"
+          autocomplete="email"
+          placeholder="name@example.com"
+          required /></label
+      ><label
+        >想聊些什么？<textarea
+          name="message"
+          formControlName="message"
+          placeholder="简单说说你的想法……"
+          rows="5"
+          required
+        ></textarea>
+      </label>
+      @if (attempted() && form.invalid) {
+      <p class="form-error" role="alert">请填写姓名、有效的邮箱和消息内容。</p>
+      }
+      <button type="submit" class="button">
+        提交演示表单 <span aria-hidden="true">→</span>
+      </button>
+      @if (submitted()) {
+      <p class="form-success" role="status">
+        谢谢你！这是一份演示表单，消息没有发送到服务器。
+      </p>
+      }
+      <small>仅供体验，不会发送或保存你的信息。</small>
+    </form>
+  </div>
+</section>

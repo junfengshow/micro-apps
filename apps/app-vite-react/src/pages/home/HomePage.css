@@ -1,0 +1,323 @@
+#app-vite-react-root .hero {
+  min-height: 560px;
+  display: grid;
+  grid-template-columns: 1fr 0.92fr;
+  align-items: center;
+  gap: 50px;
+  padding: 48px 0 62px;
+}
+#app-vite-react-root .hero-copy {
+  padding: 10px 0 0 38px;
+}
+#app-vite-react-root .hero-description {
+  max-width: 400px;
+  margin-bottom: 29px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+#app-vite-react-root .hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+#app-vite-react-root .hero-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 54px;
+  color: var(--muted);
+  font-size: 10px;
+}
+#app-vite-react-root .avatar-stack {
+  display: flex;
+  padding-left: 5px;
+}
+#app-vite-react-root .avatar-stack span {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  margin-left: -5px;
+  border: 2px solid #f4f5f2;
+  border-radius: 50%;
+  background: #e7bca8;
+  color: #50372b;
+  font-size: 9px;
+}
+#app-vite-react-root .avatar-stack span:nth-child(2) {
+  background: #c4d7bd;
+  color: #3e5140;
+}
+#app-vite-react-root .avatar-stack span:nth-child(3) {
+  background: #d8cae7;
+  color: #50465f;
+}
+#app-vite-react-root .hero-art {
+  position: relative;
+  min-height: 410px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #e9eddf;
+}
+#app-vite-react-root .hero-art::before {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: #dce6c4;
+  content: "";
+}
+#app-vite-react-root .art-orbit {
+  position: absolute;
+  z-index: 1;
+  border: 1px solid rgb(95 113 69 / 18%);
+  border-radius: 50%;
+  transform: rotate(-22deg);
+}
+#app-vite-react-root .orbit-one {
+  width: 410px;
+  height: 180px;
+}
+#app-vite-react-root .orbit-two {
+  width: 470px;
+  height: 240px;
+  transform: rotate(30deg);
+}
+#app-vite-react-root .art-card {
+  position: absolute;
+  z-index: 2;
+  width: 206px;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  box-shadow: 0 24px 50px rgb(49 60 39 / 14%);
+}
+#app-vite-react-root .card-back {
+  margin: -38px 0 0 42px;
+  border: 1px solid #e6e8e1;
+  background: #fbfcf9;
+  transform: rotate(9deg);
+}
+#app-vite-react-root .card-front {
+  margin: 37px 50px 0 0;
+  background: #c9ee58;
+  transform: rotate(-8deg);
+}
+#app-vite-react-root .mini-lines {
+  display: grid;
+  gap: 11px;
+  margin-top: 42px;
+}
+#app-vite-react-root .mini-lines i {
+  height: 7px;
+  border-radius: 6px;
+  background: #e5e8df;
+}
+#app-vite-react-root .mini-lines i:nth-child(2) {
+  width: 76%;
+}
+#app-vite-react-root .mini-lines i:nth-child(3) {
+  width: 54%;
+}
+#app-vite-react-root .card-sparkle {
+  margin: 19px 0 13px;
+  font-size: 31px;
+}
+#app-vite-react-root .card-front strong {
+  margin-top: 19px;
+  font-size: 25px;
+  letter-spacing: -0.07em;
+  line-height: 1.35;
+}
+#app-vite-react-root .card-arrow {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  font-size: 19px;
+}
+#app-vite-react-root .art-sticker {
+  position: absolute;
+  z-index: 3;
+  top: 48px;
+  right: 44px;
+  width: 76px;
+  height: 76px;
+  display: grid;
+  align-content: center;
+  border-radius: 50%;
+  background: #fbfcf9;
+  color: #586c2e;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.6;
+  transform: rotate(9deg);
+}
+#app-vite-react-root .art-caption {
+  position: absolute;
+  right: 28px;
+  bottom: 24px;
+  color: #68715f;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+#app-vite-react-root .stat-strip {
+  min-height: 118px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 1.15fr;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+#app-vite-react-root .stat-strip > div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+#app-vite-react-root .stat-strip strong {
+  font-size: 27px;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+}
+#app-vite-react-root .stat-strip strong span {
+  color: #7b9d22;
+  font-size: 15px;
+}
+#app-vite-react-root .stat-strip small {
+  color: var(--muted);
+  font-size: 10px;
+}
+#app-vite-react-root .stat-strip > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+#app-vite-react-root .section-block {
+  padding: 105px 0 115px;
+  text-align: center;
+}
+#app-vite-react-root .section-block .eyebrow {
+  justify-content: center;
+}
+#app-vite-react-root .section-block h2 {
+  margin-bottom: 17px;
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  line-height: 1.32;
+}
+#app-vite-react-root .quick-links {
+  max-width: 660px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 42px auto 0;
+  text-align: left;
+}
+#app-vite-react-root .quick-links a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 18px;
+  background: #f8f9f6;
+  transition:
+    border 160ms ease,
+    transform 160ms ease;
+}
+#app-vite-react-root .quick-links a:hover {
+  border-color: #a8bb83;
+  transform: translateY(-2px);
+}
+#app-vite-react-root .quick-links a > span {
+  color: #85916f;
+  font-size: 10px;
+}
+#app-vite-react-root .quick-links strong {
+  flex: 1;
+  font-size: 11px;
+}
+#app-vite-react-root .quick-links i {
+  font-size: 15px;
+  font-style: normal;
+}
+
+@media (max-width: 800px) {
+  #app-vite-react-root .hero {
+    min-height: auto;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 20px;
+    padding: 48px 0;
+  }
+  #app-vite-react-root .hero-copy {
+    padding-left: 0;
+  }
+  #app-vite-react-root .hero-art {
+    min-height: 340px;
+  }
+  #app-vite-react-root .art-card {
+    transform: scale(0.85) rotate(-8deg);
+  }
+  #app-vite-react-root .card-back {
+    transform: scale(0.85) rotate(9deg);
+  }
+  #app-vite-react-root .stat-strip {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 22px 0;
+  }
+  #app-vite-react-root .stat-strip > p {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  #app-vite-react-root .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 42px 0 30px;
+  }
+  #app-vite-react-root .hero h1 {
+    font-size: 52px;
+  }
+  #app-vite-react-root .hero-description {
+    max-width: 340px;
+    font-size: 12px;
+  }
+  #app-vite-react-root .hero-note {
+    margin-top: 31px;
+  }
+  #app-vite-react-root .hero-art {
+    min-height: 300px;
+  }
+  #app-vite-react-root .stat-strip {
+    min-height: 95px;
+    gap: 5px;
+  }
+  #app-vite-react-root .stat-strip > div {
+    display: grid;
+    gap: 3px;
+  }
+  #app-vite-react-root .stat-strip strong {
+    font-size: 23px;
+  }
+  #app-vite-react-root .stat-strip small {
+    font-size: 8px;
+  }
+  #app-vite-react-root .section-block {
+    padding: 72px 0;
+  }
+  #app-vite-react-root .section-block h2 {
+    font-size: 34px;
+  }
+  #app-vite-react-root .quick-links {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}

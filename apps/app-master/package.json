@@ -1,0 +1,57 @@
+{
+  "name": "@micro-apps/app-master",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --config webpack.config.cjs --mode development --env engine=all",
+    "dev:qiankun": "webpack serve --config webpack.config.cjs --mode development --env engine=qiankun",
+    "dev:micro-app": "webpack serve --config webpack.config.cjs --mode development --env engine=micro-app",
+    "build": "npm run typecheck && webpack --config webpack.config.cjs --mode production --env engine=all",
+    "build:qiankun": "npm run typecheck && webpack --config webpack.config.cjs --mode production --env engine=qiankun",
+    "build:micro-app": "npm run typecheck && webpack --config webpack.config.cjs --mode production --env engine=micro-app",
+    "typecheck": "tsc --noEmit",
+    "dev:wujie": "webpack serve --config webpack.config.cjs --mode development --env engine=wujie",
+    "dev:federation": "webpack serve --config webpack.config.cjs --mode development --env engine=federation",
+    "test": "tsc -p tsconfig.test.json && node --test .cache/tests/tests/*.test.js",
+    "format": "prettier --config .prettierrc --ignore-path .prettierignore --write .",
+    "format:check": "prettier --config .prettierrc --ignore-path .prettierignore --check ."
+  },
+  "dependencies": {
+    "@micro-zoe/micro-app": "1.0.0-rc.32",
+    "antd": "^6.0.0",
+    "qiankun": "^2.10.16",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router": "^7.9.0",
+    "wujie": "^2.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^8.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "postcss": "^8.5.0",
+    "postcss-loader": "^8.2.0",
+    "prettier": "^3.3.3",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^4.1.0",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.9.0",
+    "webpack": "^5.100.0",
+    "webpack-cli": "^6.0.0",
+    "webpack-dev-server": "^5.2.0",
+    "webpack-merge": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "overrides": {
+    "sockjs": {
+      "uuid": "^11.1.1"
+    }
+  }
+}

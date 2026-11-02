@@ -1,0 +1,40 @@
+{
+  "name": "@micro-apps/app-qiankun-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "build": "npm run typecheck && webpack --mode production",
+    "typecheck": "vue-tsc --noEmit",
+    "format": "prettier --config .prettierrc --ignore-path .prettierignore --write .",
+    "format:check": "prettier --config .prettierrc --ignore-path .prettierignore --check .",
+    "test": "npm run build && node --test tests/*.test.cjs"
+  },
+  "dependencies": {
+    "vue": "^3.5.0",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.5.0",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.0",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.3.3",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.9.0",
+    "vue-loader": "^17.4.2",
+    "vue-tsc": "^3.1.0",
+    "webpack": "^5.100.0",
+    "webpack-cli": "^6.0.0",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "overrides": {
+    "sockjs": {
+      "uuid": "^11.1.1"
+    }
+  }
+}

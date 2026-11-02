@@ -1,0 +1,124 @@
+#app-vite-react-root .contact-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 80px;
+  padding: 34px;
+  background: #e7ecd9;
+}
+#app-vite-react-root .contact-details {
+  position: relative;
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 22px 0;
+}
+#app-vite-react-root .contact-details .mini-label {
+  margin-bottom: 22px;
+}
+#app-vite-react-root .contact-details h2 {
+  margin-bottom: 27px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 1.45;
+}
+#app-vite-react-root .email-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #8b9876;
+  font-size: 12px;
+  font-weight: 600;
+}
+#app-vite-react-root .email-link span {
+  font-size: 17px;
+}
+#app-vite-react-root .contact-hours {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  color: #68715f;
+  font-size: 9px;
+}
+#app-vite-react-root .online-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8cad46;
+}
+#app-vite-react-root .contact-decoration {
+  position: absolute;
+  right: 10px;
+  bottom: -53px;
+  color: #cbd9af;
+  font-size: 210px;
+  line-height: 1;
+}
+#app-vite-react-root .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  padding: 13px 0;
+}
+#app-vite-react-root .contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 10px;
+  font-weight: 600;
+}
+#app-vite-react-root .contact-form input,
+#app-vite-react-root .contact-form textarea {
+  width: 100%;
+  border: 1px solid #d4dac8;
+  border-radius: 2px;
+  outline: none;
+  padding: 12px 13px;
+  background: rgb(255 255 255 / 56%);
+  color: var(--ink);
+  font-size: 10px;
+  resize: vertical;
+  transition: border-color 160ms ease;
+}
+#app-vite-react-root .contact-form input:focus,
+#app-vite-react-root .contact-form textarea:focus {
+  border-color: #819b4c;
+}
+#app-vite-react-root .contact-form input::placeholder,
+#app-vite-react-root .contact-form textarea::placeholder {
+  color: #9a9f94;
+}
+#app-vite-react-root .form-submit {
+  align-self: flex-start;
+  min-width: 150px;
+}
+#app-vite-react-root .form-success {
+  margin: -4px 0 0;
+  color: #536938;
+  font-size: 10px;
+}
+
+@media (max-width: 800px) {
+  #app-vite-react-root .contact-layout {
+    gap: 35px;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 560px) {
+  #app-vite-react-root .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 22px;
+  }
+  #app-vite-react-root .contact-details {
+    min-height: 260px;
+  }
+  #app-vite-react-root .contact-form {
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,6 @@
+**/node_modules/
+**/dist/
+**/.cache/
+**/*.tsbuildinfo
+**/package-lock.json
+apps/app-react-source/vendor/react/

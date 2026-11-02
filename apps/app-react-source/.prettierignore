@@ -1,0 +1,7 @@
+**/node_modules/
+**/dist/
+**/.cache/
+**/*.tsbuildinfo
+**/package-lock.json
+# 上游源码保持 React 官方格式，应用格式化不遍历第三方代码。
+vendor/react/

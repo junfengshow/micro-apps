@@ -1,0 +1,219 @@
+<div class="handbook">
+  <aside class="book-sidebar" aria-label="手册章节">
+    <div class="book-brand">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <div><strong>Angular</strong><small>KNOWLEDGE HANDBOOK</small></div>
+    </div>
+    <p class="eyebrow">学习目录 / CONTENTS</p>
+    <nav class="book-tabs" aria-label="知识分类">
+      @for (item of categories; track item.id; let index = $index) {
+      <button
+        type="button"
+        (click)="select(item)"
+        [attr.aria-pressed]="category().id === item.id"
+      >
+        <span class="tab-number">0{{index + 1}}</span>
+        <span
+          ><strong>{{item.label}}</strong><small>{{item.caption}}</small></span
+        >
+        <span class="tab-count">{{item.entries.length}}</span>
+      </button>
+      }
+    </nav>
+    <div class="book-sidebar-note">
+      <span class="red-dot"></span>每天理解一点点。
+      <p>从概念出发，在实践中连接知识。</p>
+      <a routerLink="/">← 返回工作室</a>
+    </div>
+  </aside>
+  <section class="book-main" aria-labelledby="book-title">
+    <div class="book-topline">
+      <p class="eyebrow">LEARN. UNDERSTAND. BUILD.</p>
+      <span class="badge">ANGULAR 22</span>
+    </div>
+    <h1 id="book-title">Angular <span class="accent">知识手册</span></h1>
+    <p class="book-intro">把原理想清楚，把代码写明白。</p>
+    <div class="book-heading">
+      <div>
+        <h2>{{category().label}}</h2>
+        <p>{{category().description}}</p>
+      </div>
+      <span class="chapter-count"
+        >{{category().entries.length}}<small>篇内容</small></span
+      >
+    </div>
+    <div class="book-tools">
+      <label class="search-field">
+        <span class="sr-only">搜索知识条目</span
+        ><span aria-hidden="true">⌕</span>
+        <input
+          id="handbook-search"
+          type="search"
+          [ngModel]="query()"
+          (ngModelChange)="update({ query: $event })"
+          placeholder="搜索问题、关键词或代码…"
+        />
+        <kbd aria-hidden="true">/</kbd>
+      </label>
+      @if (category().id === 'interview') {
+      <label class="level-select"
+        ><span class="sr-only">面试题难度</span>
+        <select [ngModel]="level()" (ngModelChange)="update({ level: $event })">
+          @for (item of levels; track item) {
+          <option [value]="item">{{item}}</option>
+          }
+        </select>
+      </label>
+      }
+      <span class="result-count" role="status"
+        >{{entries().length}} 条结果</span
+      >
+    </div>
+    <div class="book-filters" aria-label="主题筛选">
+      @for (item of groups(); track item) {
+      <button
+        type="button"
+        (click)="update({ group: item })"
+        [attr.aria-pressed]="group() === item"
+      >
+        {{item}}
+      </button>
+      }
+    </div>
+    @if (category().id === 'basics') {
+    <div class="demo-panel">
+      <div>
+        <span class="eyebrow">LIVE / SIGNALS 响应式实验</span>
+        <h3>输入改变，视图随之更新。</h3>
+        <p>
+          你好，<strong>{{demoName() || '朋友'}}</strong>。这是一次真实的
+          Angular Signals 更新。
+        </p>
+        <p>
+          派生值 computed：<strong class="demo-doubled">{{doubled()}}</strong
+          >（计数 × 2）
+        </p>
+      </div>
+      <div class="demo-controls">
+        <label
+          ><span class="sr-only">演示名称</span
+          ><input
+            [ngModel]="demoName()"
+            (ngModelChange)="demoName.set($event)"
+            placeholder="试着输入你的名字"
+        /></label>
+        <div>
+          <button type="button" (click)="increment()">计数 +1</button
+          ><output aria-live="polite">{{demoCount()}}</output
+          ><button type="button" class="quiet" (click)="demoCount.set(0)">
+            重置
+          </button>
+        </div>
+      </div>
+    </div>
+    }
+    <div class="entries">
+      @for (entry of entries(); track entry.id; let index = $index) {
+      <article
+        class="entry"
+        [id]="'entry-' + entry.id"
+        [attr.aria-labelledby]="'title-' + entry.id"
+      >
+        <div class="entry-heading">
+          <span class="entry-number"
+            >{{index + 1 < 10 ? '0' : ''}}{{index + 1}}</span
+          >
+          <h3 [id]="'title-' + entry.id">{{entry.title}}</h3>
+          <span class="badge">{{entry.group}}</span> @if (entry.level) {
+          <span class="difficulty" [attr.data-level]="entry.level"
+            >{{entry.level}}</span
+          >
+          }
+        </div>
+        @if (entry.prompt) {
+        <p class="entry-prompt">{{entry.prompt}}</p>
+        }
+        <details class="entry-details" [open]="!entry.prompt">
+          <summary>
+            <span
+              >{{entry.prompt ? '展开参考答案与分析' :
+              '知识要点与使用示例'}}</span
+            ><b aria-hidden="true">+</b>
+          </summary>
+          <div class="entry-body">
+            <div class="entry-explanation">
+              <p>{{entry.summary}}</p>
+              <ul>
+                @for (point of entry.points; track $index) {
+                <li>{{point}}</li>
+                }
+              </ul>
+              <div class="takeaway">
+                <strong>{{entry.prompt ? '方案边界' : '注意事项'}}</strong>
+                <p>{{entry.takeaway}}</p>
+              </div>
+              <a
+                class="source-link"
+                [href]="entry.source"
+                target="_blank"
+                rel="noopener noreferrer"
+                >阅读官方文档 ↗</a
+              >
+            </div>
+            <div class="code-block">
+              <div class="code-topbar">
+                <span>关键代码 / 示例片段</span
+                ><button
+                  type="button"
+                  (click)="copy(entry)"
+                  [attr.aria-label]="'复制代码：' + entry.title"
+                >
+                  复制
+                </button>
+              </div>
+              <pre
+                tabindex="0"
+                [attr.aria-label]="entry.title + '代码示例'"
+              ><code [textContent]="entry.code"></code></pre>
+              @if (copiedId() === entry.id) {
+              <p class="copy-status" role="status">{{copyMessage()}}</p>
+              }
+            </div>
+          </div>
+          @if (entry.prompt) {
+          <div class="review-grid">
+            <section>
+              <h4>进一步追问</h4>
+              <ol>
+                @for (question of entry.followUps; track $index) {
+                <li>{{question}}</li>
+                }
+              </ol>
+            </section>
+            <section>
+              <h4>评价要点</h4>
+              <ul>
+                @for (check of entry.checks; track $index) {
+                <li>{{check}}</li>
+                }
+              </ul>
+            </section>
+          </div>
+          }
+        </details>
+      </article>
+      } @empty {
+      <div class="empty-state">
+        <span aria-hidden="true">⌕</span>
+        <h3>还没有找到匹配的内容</h3>
+        <p>试试其他关键词，或清除筛选条件。</p>
+        <button type="button" class="button" (click)="reset()">清除筛选</button>
+      </div>
+      }
+    </div>
+    <p class="book-footnote">
+      基于现代 Angular：独立组件、Signals、内置控制流、依赖注入、响应式表单与
+      Router。
+    </p>
+  </section>
+</div>

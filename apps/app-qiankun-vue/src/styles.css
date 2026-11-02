@@ -1,0 +1,1677 @@
+#app-qiankun-vue-root {
+  --green: #42b883;
+  --green-dark: #237b55;
+  --ink: #213b32;
+  --muted: #697b72;
+  --line: #e1eae4;
+  --paper: #fbfdfb;
+  --soft: #edf7f0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+#app-qiankun-vue-root *,
+#app-qiankun-vue-root *::before,
+#app-qiankun-vue-root *::after {
+  box-sizing: border-box;
+}
+#app-qiankun-vue-root h1,
+#app-qiankun-vue-root h2,
+#app-qiankun-vue-root h3,
+#app-qiankun-vue-root p {
+  margin: 0;
+}
+#app-qiankun-vue-root a {
+  color: inherit;
+  text-decoration: none;
+}
+#app-qiankun-vue-root button,
+#app-qiankun-vue-root input,
+#app-qiankun-vue-root textarea,
+#app-qiankun-vue-root select {
+  font: inherit;
+}
+#app-qiankun-vue-root button {
+  cursor: pointer;
+}
+#app-qiankun-vue-root button,
+#app-qiankun-vue-root a,
+#app-qiankun-vue-root input,
+#app-qiankun-vue-root textarea,
+#app-qiankun-vue-root select,
+#app-qiankun-vue-root summary {
+  -webkit-tap-highlight-color: transparent;
+}
+#app-qiankun-vue-root :focus-visible {
+  outline: 3px solid #23885e;
+  outline-offset: 4px;
+}
+#app-qiankun-vue-root .vue-mark {
+  width: 28px;
+  height: 26px;
+  flex: none;
+}
+#app-qiankun-vue-root .studio-shell {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 5.2%;
+}
+#app-qiankun-vue-root .topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 96px;
+  border-bottom: 1px solid var(--line);
+}
+#app-qiankun-vue-root .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 22px;
+  font-weight: 760;
+  letter-spacing: -0.8px;
+  white-space: nowrap;
+}
+#app-qiankun-vue-root .brand-light {
+  font-weight: 450;
+}
+#app-qiankun-vue-root .topbar nav {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+#app-qiankun-vue-root .topbar nav a {
+  position: relative;
+  color: var(--muted);
+  padding: 12px 0;
+  font-size: 13px;
+  white-space: nowrap;
+}
+#app-qiankun-vue-root .topbar nav a:hover,
+#app-qiankun-vue-root .topbar nav .nav-active {
+  color: var(--green-dark);
+}
+#app-qiankun-vue-root .nav-active::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--green-dark);
+}
+#app-qiankun-vue-root .button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: var(--green-dark);
+  color: white;
+  font-weight: 600;
+  transition:
+    background 0.18s,
+    transform 0.18s;
+}
+#app-qiankun-vue-root .button:hover {
+  background: #1c6346;
+  transform: translateY(-1px);
+}
+#app-qiankun-vue-root .button-small {
+  min-height: 39px;
+  font-size: 12px;
+  padding: 9px 15px;
+  gap: 16px;
+}
+#app-qiankun-vue-root .text-link {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 13px;
+}
+#app-qiankun-vue-root .text-link:hover {
+  color: var(--green-dark);
+}
+#app-qiankun-vue-root .eyebrow {
+  color: var(--green-dark);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  line-height: 1.8;
+}
+#app-qiankun-vue-root .eyebrow i,
+#app-qiankun-vue-root .status-dot,
+#app-qiankun-vue-root .version-badge i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  margin-right: 7px;
+}
+#app-qiankun-vue-root .gradient-text {
+  background: linear-gradient(110deg, #237b55 0%, #42b883 70%, #338b75 100%);
+  color: var(--green-dark);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#app-qiankun-vue-root .home-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  padding: 74px 0 58px;
+  align-items: center;
+}
+#app-qiankun-vue-root .hero-copy h1 {
+  font-size: clamp(40px, 4.4vw, 66px);
+  line-height: 1.24;
+  letter-spacing: -2.5px;
+  font-weight: 800;
+  margin: 24px 0;
+}
+#app-qiankun-vue-root .hero-description {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+}
+#app-qiankun-vue-root .actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+#app-qiankun-vue-root .hero-copy .actions {
+  margin: 30px 0;
+}
+#app-qiankun-vue-root .hero-caption {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#app-qiankun-vue-root .little-line {
+  display: inline-block;
+  width: 22px;
+  height: 1px;
+  background: var(--green);
+}
+#app-qiankun-vue-root .hero-garden {
+  min-height: 410px;
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+  background: radial-gradient(ellipse at 50% 40%, #d0eed9, #eaf4e8 75%);
+}
+#app-qiankun-vue-root .garden-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background-image:
+    linear-gradient(#cfe1d4 1px, transparent 1px),
+    linear-gradient(90deg, #cfe1d4 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse, #000, transparent 75%);
+}
+#app-qiankun-vue-root .garden-label {
+  position: absolute;
+  top: 23px;
+  left: 24px;
+  font-size: 8px;
+  letter-spacing: 1.1px;
+  color: #597d66;
+}
+#app-qiankun-vue-root .garden-orbit {
+  position: absolute;
+  border: 1px solid #b5d4be;
+  border-radius: 50%;
+  width: 290px;
+  height: 290px;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#app-qiankun-vue-root .orbit-two {
+  width: 230px;
+  height: 230px;
+  top: 80px;
+}
+#app-qiankun-vue-root .garden-logo {
+  position: absolute;
+  width: 155px;
+  height: 145px;
+  top: 92px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 20px 22px #31784d22);
+}
+#app-qiankun-vue-root .garden-chip {
+  position: absolute;
+  top: 75px;
+  right: 24px;
+  padding: 9px 14px;
+  background: #ffffffed;
+  border: 1px solid #fff;
+  box-shadow: 0 5px 20px #295b3a09;
+  border-radius: 5px;
+  font-size: 11px;
+  transform: rotate(6deg);
+}
+#app-qiankun-vue-root .garden-chip span {
+  color: var(--green-dark);
+  margin-right: 8px;
+}
+#app-qiankun-vue-root .garden-card {
+  position: absolute;
+  left: 9%;
+  right: 13%;
+  bottom: 46px;
+  background: #fffef3;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 23px;
+  transform: rotate(-5deg);
+  box-shadow: 0 15px 30px #28503713;
+}
+#app-qiankun-vue-root .garden-card .eyebrow {
+  font-size: 8px;
+}
+#app-qiankun-vue-root .garden-card strong {
+  display: block;
+  font-size: 24px;
+  line-height: 1.5;
+  margin-top: 9px;
+}
+#app-qiankun-vue-root .garden-arrow {
+  position: absolute;
+  bottom: 26px;
+  right: 28px;
+  font-size: 32px;
+  color: var(--green-dark);
+}
+#app-qiankun-vue-root .garden-bottom {
+  position: absolute;
+  bottom: 15px;
+  left: 24px;
+  font-size: 7px;
+  letter-spacing: 1.2px;
+  color: #597d66;
+}
+#app-qiankun-vue-root .principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 27px 0;
+  gap: 28px;
+}
+#app-qiankun-vue-root .principles > div + div {
+  border-left: 1px solid var(--line);
+  padding-left: 30px;
+}
+#app-qiankun-vue-root .principles span {
+  color: var(--green-dark);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+#app-qiankun-vue-root .principles h2 {
+  font-size: 16px;
+  margin: 7px 0 3px;
+}
+#app-qiankun-vue-root .principles p {
+  color: var(--muted);
+  font-size: 11px;
+}
+#app-qiankun-vue-root .home-discover {
+  padding: 52px 0 64px;
+}
+#app-qiankun-vue-root .section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+#app-qiankun-vue-root .section-heading h2 {
+  font-size: 25px;
+  margin-top: 9px;
+  letter-spacing: -0.7px;
+}
+#app-qiankun-vue-root .discover-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 18px;
+}
+#app-qiankun-vue-root .discover-grid > a {
+  min-height: 285px;
+  border-radius: 10px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+#app-qiankun-vue-root .discover-grid > a:hover {
+  transform: translateY(-4px);
+}
+#app-qiankun-vue-root .discover-feature {
+  background: #203f33;
+  color: #fff;
+}
+#app-qiankun-vue-root .discover-feature .eyebrow {
+  color: #9fdfb8;
+  font-size: 8px;
+}
+#app-qiankun-vue-root .discover-feature h3 {
+  font-size: 27px;
+  line-height: 1.45;
+  margin: 19px 0 12px;
+  position: relative;
+  z-index: 1;
+}
+#app-qiankun-vue-root .discover-feature p {
+  color: #c0d3c7;
+  font-size: 11px;
+  position: relative;
+  z-index: 1;
+}
+#app-qiankun-vue-root .feature-link {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-top: 23px;
+  color: #bcf1d1;
+}
+#app-qiankun-vue-root .discover-feature > .vue-mark {
+  position: absolute;
+  width: 140px;
+  height: 130px;
+  right: -38px;
+  top: 70px;
+  opacity: 0.15;
+  transform: rotate(-12deg);
+}
+#app-qiankun-vue-root .discover-card {
+  background: #edf4ee;
+  border: 1px solid #e1eae2;
+}
+#app-qiankun-vue-root .contact-card {
+  background: #f5f5eb;
+  border-color: #eaeadd;
+}
+#app-qiankun-vue-root .card-index {
+  font-size: 8px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+#app-qiankun-vue-root .discover-symbol {
+  display: block;
+  font-size: 45px;
+  line-height: 1.2;
+  margin: 20px 0 15px;
+  color: var(--green-dark);
+}
+#app-qiankun-vue-root .discover-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+#app-qiankun-vue-root .discover-card p {
+  color: var(--muted);
+  font-size: 11px;
+  max-width: 200px;
+}
+#app-qiankun-vue-root .card-arrow {
+  display: block;
+  text-align: right;
+  font-size: 20px;
+  margin-top: 14px;
+}
+#app-qiankun-vue-root .studio-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10px;
+}
+#app-qiankun-vue-root .studio-footer .brand {
+  font-size: 17px;
+  color: var(--ink);
+}
+#app-qiankun-vue-root .studio-footer .vue-mark {
+  width: 20px;
+  height: 18px;
+}
+#app-qiankun-vue-root .inner-page {
+  padding: 65px 0 70px;
+  min-height: 72vh;
+}
+#app-qiankun-vue-root .page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 32px;
+  margin: 22px 0 45px;
+}
+#app-qiankun-vue-root .page-heading h1 {
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.35;
+  letter-spacing: -1.6px;
+}
+#app-qiankun-vue-root .page-heading > p {
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 340px;
+}
+#app-qiankun-vue-root .product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+#app-qiankun-vue-root .product-card {
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #edf6ef;
+}
+#app-qiankun-vue-root .product-card:nth-child(2) {
+  background: #f5f6eb;
+}
+#app-qiankun-vue-root .product-card:nth-child(3) {
+  background: #eaf3f1;
+}
+#app-qiankun-vue-root .product-symbol {
+  display: block;
+  color: var(--green-dark);
+  font-size: 68px;
+  margin: 23px 0;
+}
+#app-qiankun-vue-root .product-card h2 {
+  font-size: 24px;
+}
+#app-qiankun-vue-root .product-card p {
+  color: var(--muted);
+  margin: 12px 0 25px;
+  font-size: 13px;
+}
+#app-qiankun-vue-root .badge {
+  display: inline-block;
+  background: #fff9;
+  color: var(--green-dark);
+  border: 1px solid #d8e7dc;
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+#app-qiankun-vue-root .page-footnote {
+  color: var(--muted);
+  text-align: center;
+  margin-top: 25px;
+  font-size: 12px;
+}
+#app-qiankun-vue-root .solution-list article {
+  display: grid;
+  grid-template-columns: 70px 1fr 1.2fr 24px;
+  gap: 20px;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding: 30px 0;
+}
+#app-qiankun-vue-root .step-number {
+  font-size: 32px;
+  color: #8eb99f;
+  font-weight: 300;
+}
+#app-qiankun-vue-root .solution-list h2 {
+  font-size: 22px;
+  margin-top: 6px;
+}
+#app-qiankun-vue-root .solution-list p {
+  color: var(--muted);
+  font-size: 13px;
+}
+#app-qiankun-vue-root blockquote {
+  margin: 25px 0 0;
+  padding: 35px;
+  text-align: center;
+  background: var(--soft);
+  border-radius: 10px;
+  font-size: 22px;
+}
+#app-qiankun-vue-root blockquote small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 13px;
+}
+#app-qiankun-vue-root .about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+  margin-bottom: 45px;
+}
+#app-qiankun-vue-root .about-art {
+  background: #e7f2e9;
+  min-height: 350px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#app-qiankun-vue-root .about-art .vue-mark {
+  width: 150px;
+  height: 130px;
+}
+#app-qiankun-vue-root .about-art > span:last-child {
+  padding: 9px 22px;
+  background: #fffef3;
+  transform: rotate(-5deg);
+  box-shadow: 0 8px 18px #20412b0b;
+}
+#app-qiankun-vue-root .about-story h2 {
+  font-size: 30px;
+  line-height: 1.5;
+  margin: 15px 0;
+}
+#app-qiankun-vue-root .about-story p:not(.eyebrow) {
+  color: var(--muted);
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+#app-qiankun-vue-root .contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+#app-qiankun-vue-root .contact-note {
+  background: var(--soft);
+  padding: 36px;
+  border-radius: 12px;
+}
+#app-qiankun-vue-root .contact-note h2 {
+  font-size: 28px;
+  line-height: 1.55;
+  margin: 24px 0;
+}
+#app-qiankun-vue-root .email-link {
+  color: var(--green-dark);
+  font-size: 19px;
+  border-bottom: 1px solid #a0cab0;
+}
+#app-qiankun-vue-root .contact-note > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 15px;
+}
+#app-qiankun-vue-root .contact-flower {
+  display: block;
+  font-size: 100px;
+  color: #82bc99;
+  text-align: right;
+  line-height: 1.5;
+}
+#app-qiankun-vue-root .contact-form {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+  padding: 5px 0;
+}
+#app-qiankun-vue-root .contact-form label,
+#app-qiankun-vue-root .demo-controls > label:not(.checkbox-label) {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+#app-qiankun-vue-root .contact-form input,
+#app-qiankun-vue-root .contact-form textarea,
+#app-qiankun-vue-root .demo-controls input:not([type="checkbox"]) {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d9e5dc;
+  background: #fff;
+  border-radius: 6px;
+  padding: 12px 14px;
+  color: var(--ink);
+  font-weight: 400;
+}
+#app-qiankun-vue-root textarea {
+  resize: vertical;
+}
+#app-qiankun-vue-root .contact-form .button {
+  justify-content: space-between;
+}
+#app-qiankun-vue-root .success-message {
+  padding: 14px;
+  border-radius: 6px;
+  background: var(--soft);
+  color: var(--green-dark);
+  font-size: 12px;
+}
+/* 手册样式均限定到子应用根节点，避免污染宿主。 */
+#app-qiankun-vue-root .handbook {
+  display: grid;
+  grid-template-columns: 244px minmax(0, 1fr);
+  max-width: 1800px;
+  margin: auto;
+}
+#app-qiankun-vue-root .skip-link {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  padding: 12px 20px;
+  z-index: 10;
+  background: white;
+  color: var(--green-dark);
+  border: 2px solid var(--green-dark);
+}
+#app-qiankun-vue-root .skip-link:focus {
+  top: 15px;
+}
+#app-qiankun-vue-root .handbook-sidebar {
+  padding: 30px 20px;
+  border-right: 1px solid var(--line);
+  background: #f2f6f1;
+  align-self: start;
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+}
+#app-qiankun-vue-root .handbook-brand {
+  font-size: 18px;
+  letter-spacing: -0.6px;
+}
+#app-qiankun-vue-root .handbook-brand .vue-mark {
+  width: 26px;
+}
+#app-qiankun-vue-root .sidebar-caption {
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 9px;
+}
+#app-qiankun-vue-root .sidebar-label {
+  font-size: 8px;
+  margin: 42px 9px 15px;
+  letter-spacing: 1.2px;
+}
+#app-qiankun-vue-root .chapter-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+#app-qiankun-vue-root .chapter-nav button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 10px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  text-align: left;
+}
+#app-qiankun-vue-root .chapter-nav button:hover {
+  background: #e7f1e8;
+}
+#app-qiankun-vue-root .chapter-nav button[aria-pressed="true"] {
+  background: #e0eee3;
+  border-color: #d2e4d6;
+  color: var(--green-dark);
+}
+#app-qiankun-vue-root .chapter-index {
+  font-size: 9px;
+  opacity: 0.8;
+}
+#app-qiankun-vue-root .chapter-nav strong {
+  display: block;
+  font-size: 12px;
+}
+#app-qiankun-vue-root .chapter-nav small {
+  display: block;
+  font-size: 9px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+#app-qiankun-vue-root .chapter-count {
+  margin-left: auto;
+  font-size: 9px;
+}
+#app-qiankun-vue-root .sidebar-note {
+  margin: 40px 8px 30px;
+  border-top: 1px solid #d9e6db;
+  padding-top: 24px;
+}
+#app-qiankun-vue-root .sidebar-note > span {
+  font-size: 28px;
+  color: var(--green-dark);
+}
+#app-qiankun-vue-root .sidebar-note h2 {
+  font-size: 12px;
+  margin: 8px 0;
+}
+#app-qiankun-vue-root .sidebar-note p {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.9;
+}
+#app-qiankun-vue-root .sidebar-note a {
+  display: inline-block;
+  color: var(--green-dark);
+  font-size: 10px;
+  margin-top: 14px;
+}
+#app-qiankun-vue-root .back-studio {
+  display: block;
+  border-top: 1px solid var(--line);
+  padding: 18px 8px 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+#app-qiankun-vue-root .handbook-main {
+  min-width: 0;
+  padding: 0 40px;
+}
+#app-qiankun-vue-root .handbook-topbar {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10px;
+}
+#app-qiankun-vue-root .version-badge {
+  padding: 5px 10px;
+  border: 1px solid #dce9df;
+  border-radius: 20px;
+  color: var(--green-dark);
+  background: #f2f8f3;
+  font-size: 9px;
+}
+#app-qiankun-vue-root .version-badge i {
+  width: 5px;
+  height: 5px;
+}
+#app-qiankun-vue-root .handbook-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 46px 0 35px;
+  border-bottom: 1px solid var(--line);
+}
+#app-qiankun-vue-root .handbook-hero h1 {
+  font-size: clamp(32px, 3.4vw, 50px);
+  line-height: 1.3;
+  letter-spacing: -1.8px;
+  margin: 14px 0 19px;
+}
+#app-qiankun-vue-root .handbook-hero > div > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 12px;
+}
+#app-qiankun-vue-root .handbook-stats {
+  display: flex;
+  gap: 25px;
+  margin-top: 25px;
+}
+#app-qiankun-vue-root .handbook-stats > span {
+  color: var(--muted);
+  font-size: 10px;
+}
+#app-qiankun-vue-root .handbook-stats strong {
+  color: var(--ink);
+  font-size: 22px;
+  margin-right: 6px;
+  font-weight: 600;
+}
+#app-qiankun-vue-root .handbook-art {
+  width: 190px;
+  height: 190px;
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #d9efdf, transparent 70%);
+}
+#app-qiankun-vue-root .handbook-art > div {
+  position: absolute;
+  inset: 6px;
+  border: 1px solid #d0e7d6;
+  border-radius: 50%;
+}
+#app-qiankun-vue-root .handbook-art > div::after {
+  content: "";
+  position: absolute;
+  inset: 19px;
+  border: 1px dashed #b8d7c1;
+  border-radius: 50%;
+}
+#app-qiankun-vue-root .handbook-art .vue-mark {
+  width: 100px;
+  height: 90px;
+}
+#app-qiankun-vue-root .handbook-art > span {
+  position: absolute;
+  bottom: 4px;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  color: var(--green-dark);
+  background: var(--paper);
+  padding: 5px;
+}
+#app-qiankun-vue-root .chapter-section {
+  padding: 32px 0 40px;
+}
+#app-qiankun-vue-root .chapter-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+#app-qiankun-vue-root .chapter-heading h2 {
+  font-size: 23px;
+  letter-spacing: -0.6px;
+  margin: 9px 0;
+}
+#app-qiankun-vue-root .chapter-heading p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 11px;
+}
+#app-qiankun-vue-root .chapter-big-number {
+  font-size: 62px;
+  line-height: 1;
+  color: #e1ebe1;
+  font-weight: 300;
+}
+#app-qiankun-vue-root .handbook-tools {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+#app-qiankun-vue-root .search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid #dce6df;
+  border-radius: 7px;
+  padding: 9px 14px;
+  flex: 1;
+  min-width: 0;
+}
+#app-qiankun-vue-root .search-box > span {
+  font-size: 24px;
+  line-height: 1;
+  color: var(--muted);
+}
+#app-qiankun-vue-root .search-box input {
+  border: 0;
+  background: transparent;
+  min-width: 0;
+  width: 100%;
+  color: var(--ink);
+  font-size: 12px;
+  padding: 3px 0;
+}
+#app-qiankun-vue-root .search-box:focus-within {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+#app-qiankun-vue-root .search-box input:focus {
+  outline: 0;
+}
+#app-qiankun-vue-root .search-box kbd {
+  font-size: 8px;
+  border: 1px solid var(--line);
+  padding: 1px 4px;
+  border-radius: 3px;
+  color: var(--muted);
+}
+#app-qiankun-vue-root .handbook-tools > span {
+  font-size: 10px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+#app-qiankun-vue-root .quiet-button {
+  background: transparent;
+  border: 1px solid #d7e3da;
+  border-radius: 5px;
+  color: var(--green-dark);
+  padding: 7px 10px;
+  font-size: 10px;
+}
+#app-qiankun-vue-root .quiet-button:hover {
+  background: #eaf3ec;
+}
+#app-qiankun-vue-root .filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+#app-qiankun-vue-root .filters button {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+}
+#app-qiankun-vue-root .filters button[aria-pressed="true"] {
+  background: #e2f1e7;
+  color: var(--green-dark);
+  border-color: #bfdcc9;
+}
+#app-qiankun-vue-root .filters button:hover {
+  border-color: #8eb99f;
+}
+#app-qiankun-vue-root .difficulty-filter {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  margin: -3px 0 20px;
+  font-size: 10px;
+  color: var(--muted);
+}
+#app-qiankun-vue-root .difficulty-filter select {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+  border-radius: 5px;
+  padding: 4px 18px 4px 8px;
+  margin-left: 10px;
+}
+#app-qiankun-vue-root .live-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  background: #edf6ef;
+  border: 1px solid #dceadd;
+  border-radius: 9px;
+  padding: 22px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+#app-qiankun-vue-root .live-demo h3 {
+  font-size: 17px;
+  margin: 8px 0;
+}
+#app-qiankun-vue-root .live-demo p {
+  font-size: 10px;
+  color: var(--muted);
+}
+#app-qiankun-vue-root .demo-values {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 8px;
+}
+#app-qiankun-vue-root .demo-values > span {
+  color: var(--muted);
+  font-size: 10px;
+}
+#app-qiankun-vue-root .demo-values strong {
+  color: var(--green-dark);
+  display: block;
+  font-size: 28px;
+}
+#app-qiankun-vue-root .demo-controls > p {
+  margin-top: 9px;
+}
+#app-qiankun-vue-root .demo-greeting {
+  display: block;
+  font-size: 19px;
+  margin: 7px 0;
+}
+#app-qiankun-vue-root .checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  gap: 7px;
+}
+#app-qiankun-vue-root input[type="checkbox"] {
+  accent-color: var(--green-dark);
+}
+#app-qiankun-vue-root .event-parent {
+  padding: 10px;
+  border: 1px dashed #b6d2be;
+  margin-top: 8px;
+}
+#app-qiankun-vue-root .reading-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 155px;
+  gap: 25px;
+  align-items: start;
+}
+#app-qiankun-vue-root .entries {
+  min-width: 0;
+  display: grid;
+  gap: 17px;
+}
+#app-qiankun-vue-root .knowledge-entry {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  min-width: 0;
+  scroll-margin-top: 20px;
+  overflow: hidden;
+}
+#app-qiankun-vue-root .knowledge-entry > header,
+#app-qiankun-vue-root .knowledge-entry > summary {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 18px 20px;
+}
+#app-qiankun-vue-root .knowledge-entry > header {
+  border-bottom: 1px solid var(--line);
+}
+#app-qiankun-vue-root .entry-number {
+  font-size: 10px;
+  color: #84a490;
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+#app-qiankun-vue-root .knowledge-entry h3,
+#app-qiankun-vue-root .entry-title {
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.6;
+}
+#app-qiankun-vue-root .knowledge-entry .badge {
+  margin-left: auto;
+  font-size: 8px;
+}
+#app-qiankun-vue-root .entry-body {
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+}
+#app-qiankun-vue-root .entry-summary {
+  font-size: 12px;
+  line-height: 1.9;
+}
+#app-qiankun-vue-root .entry-body ul {
+  padding-left: 17px;
+  margin: 12px 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+#app-qiankun-vue-root .entry-body li + li {
+  margin-top: 7px;
+}
+#app-qiankun-vue-root .entry-body li::marker {
+  color: var(--green);
+}
+#app-qiankun-vue-root .takeaway {
+  border-left: 2px solid #71b88a;
+  padding: 8px 12px;
+  background: #f4f8f3;
+  margin: 17px 0;
+}
+#app-qiankun-vue-root .takeaway > span {
+  color: var(--green-dark);
+  font-size: 9px;
+  font-weight: 700;
+}
+#app-qiankun-vue-root .takeaway p {
+  font-size: 11px;
+  margin-top: 3px;
+}
+#app-qiankun-vue-root .source-link {
+  font-size: 10px;
+  color: var(--green-dark);
+}
+#app-qiankun-vue-root .source-link:hover {
+  text-decoration: underline;
+}
+#app-qiankun-vue-root .code-example {
+  min-width: 0;
+  border-radius: 7px;
+  background: #1f302b;
+  color: #dce9df;
+  overflow: hidden;
+}
+#app-qiankun-vue-root .code-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid #ffffff12;
+  padding: 9px 13px;
+}
+#app-qiankun-vue-root .code-bar > span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #a4bbac;
+  font-size: 8px;
+  letter-spacing: 0.7px;
+}
+#app-qiankun-vue-root .code-bar i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #658575;
+}
+#app-qiankun-vue-root .code-bar i:last-child {
+  margin-right: 7px;
+}
+#app-qiankun-vue-root .code-bar button {
+  border: 1px solid #587264;
+  background: transparent;
+  color: #d0e7d8;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 9px;
+}
+#app-qiankun-vue-root .code-example pre {
+  margin: 0;
+  padding: 17px;
+  overflow: auto;
+  tab-size: 2;
+}
+#app-qiankun-vue-root .code-example code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+  line-height: 1.85;
+}
+#app-qiankun-vue-root .copy-status {
+  font-size: 10px;
+  padding: 8px 14px;
+  background: #2e463b;
+}
+#app-qiankun-vue-root .chapter-outline {
+  position: sticky;
+  top: 25px;
+  border-left: 1px solid var(--line);
+  padding-left: 16px;
+}
+#app-qiankun-vue-root .chapter-outline .eyebrow {
+  font-size: 8px;
+}
+#app-qiankun-vue-root .chapter-outline nav {
+  display: grid;
+  gap: 12px;
+  margin: 17px 0;
+}
+#app-qiankun-vue-root .chapter-outline a {
+  font-size: 10px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+#app-qiankun-vue-root .chapter-outline a:hover {
+  color: var(--green-dark);
+}
+#app-qiankun-vue-root .chapter-outline > p:last-child {
+  font-size: 9px;
+  color: var(--muted);
+  line-height: 1.9;
+  border-top: 1px solid var(--line);
+  padding-top: 15px;
+}
+#app-qiankun-vue-root .interview-entry > summary {
+  cursor: pointer;
+  list-style: none;
+}
+#app-qiankun-vue-root .interview-entry > summary::-webkit-details-marker {
+  display: none;
+}
+#app-qiankun-vue-root .interview-entry > summary:hover {
+  background: #f5f9f5;
+}
+#app-qiankun-vue-root .interview-entry[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+#app-qiankun-vue-root .entry-title small {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+#app-qiankun-vue-root .entry-plus {
+  margin-left: auto;
+  color: var(--green-dark);
+  font-size: 22px;
+  font-weight: 300;
+  flex: none;
+}
+#app-qiankun-vue-root .interview-entry[open] .entry-plus {
+  transform: rotate(45deg);
+}
+#app-qiankun-vue-root .follow-up {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+#app-qiankun-vue-root .follow-up strong {
+  display: block;
+  color: var(--ink);
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+#app-qiankun-vue-root .empty-state {
+  padding: 45px 20px;
+  text-align: center;
+  background: #f0f7f1;
+  border: 1px dashed #c7dfcd;
+  border-radius: 8px;
+}
+#app-qiankun-vue-root .empty-state > span {
+  font-size: 35px;
+  color: var(--green-dark);
+}
+#app-qiankun-vue-root .empty-state h3 {
+  font-size: 19px;
+}
+#app-qiankun-vue-root .empty-state p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 10px 0 20px;
+}
+#app-qiankun-vue-root .handbook-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+  color: var(--muted);
+  font-size: 9px;
+}
+@media (min-width: 1550px) {
+  #app-qiankun-vue-root .entry-body {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+@media (max-width: 1200px) {
+  #app-qiankun-vue-root .topbar {
+    gap: 15px;
+  }
+  #app-qiankun-vue-root .topbar nav {
+    gap: 18px;
+  }
+  #app-qiankun-vue-root .handbook {
+    grid-template-columns: 215px minmax(0, 1fr);
+  }
+  #app-qiankun-vue-root .handbook-sidebar {
+    padding: 25px 15px;
+  }
+  #app-qiankun-vue-root .handbook-main {
+    padding: 0 28px;
+  }
+  #app-qiankun-vue-root .reading-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #app-qiankun-vue-root .chapter-outline {
+    display: none;
+  }
+  #app-qiankun-vue-root .handbook-art {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media (max-width: 960px) {
+  #app-qiankun-vue-root .topbar {
+    flex-wrap: wrap;
+    padding: 20px 0 12px;
+  }
+  #app-qiankun-vue-root .topbar nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 32px;
+  }
+  #app-qiankun-vue-root .home-hero {
+    gap: 24px;
+    padding: 45px 0;
+  }
+  #app-qiankun-vue-root .hero-garden {
+    min-height: 370px;
+  }
+  #app-qiankun-vue-root .hero-copy h1 {
+    font-size: 43px;
+  }
+  #app-qiankun-vue-root .hero-description {
+    font-size: 12px;
+  }
+  #app-qiankun-vue-root .hero-copy .actions {
+    gap: 15px;
+  }
+  #app-qiankun-vue-root .discover-grid {
+    gap: 12px;
+  }
+  #app-qiankun-vue-root .discover-grid > a {
+    padding: 22px;
+  }
+  #app-qiankun-vue-root .discover-feature h3 {
+    font-size: 23px;
+  }
+  #app-qiankun-vue-root .page-heading {
+    align-items: start;
+  }
+  #app-qiankun-vue-root .page-heading > p {
+    max-width: 250px;
+    font-size: 12px;
+  }
+  #app-qiankun-vue-root .product-card {
+    padding: 22px;
+  }
+  #app-qiankun-vue-root .about-story {
+    gap: 30px;
+  }
+  #app-qiankun-vue-root .contact-note {
+    padding: 27px;
+  }
+  #app-qiankun-vue-root .contact-note h2 {
+    font-size: 25px;
+  }
+  #app-qiankun-vue-root .handbook-art {
+    display: none;
+  }
+  #app-qiankun-vue-root .handbook-tools {
+    flex-wrap: wrap;
+  }
+  #app-qiankun-vue-root .search-box {
+    flex-basis: 70%;
+  }
+  #app-qiankun-vue-root .chapter-heading h2 {
+    font-size: 21px;
+  }
+  #app-qiankun-vue-root .chapter-big-number {
+    display: none;
+  }
+  #app-qiankun-vue-root .live-demo {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+@media (max-width: 700px) {
+  #app-qiankun-vue-root .studio-shell {
+    padding: 0 22px;
+  }
+  #app-qiankun-vue-root .brand {
+    font-size: 20px;
+  }
+  #app-qiankun-vue-root .topbar {
+    gap: 13px;
+  }
+  #app-qiankun-vue-root .topbar > .button {
+    font-size: 10px;
+    padding: 8px 10px;
+    gap: 7px;
+  }
+  #app-qiankun-vue-root .topbar nav {
+    justify-content: space-between;
+    gap: 10px;
+  }
+  #app-qiankun-vue-root .topbar nav a {
+    font-size: 12px;
+  }
+  #app-qiankun-vue-root .home-hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 38px 0 30px;
+  }
+  #app-qiankun-vue-root .hero-copy h1 {
+    font-size: 48px;
+    margin: 20px 0;
+  }
+  #app-qiankun-vue-root .hero-description {
+    font-size: 13px;
+  }
+  #app-qiankun-vue-root .hero-garden {
+    min-height: 360px;
+  }
+  #app-qiankun-vue-root .garden-logo {
+    top: 65px;
+  }
+  #app-qiankun-vue-root .garden-card {
+    bottom: 40px;
+  }
+  #app-qiankun-vue-root .principles {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 22px 0;
+  }
+  #app-qiankun-vue-root .principles > div + div {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+  #app-qiankun-vue-root .principles h2 {
+    display: inline;
+    margin-left: 15px;
+    font-size: 15px;
+  }
+  #app-qiankun-vue-root .principles p {
+    margin-top: 6px;
+  }
+  #app-qiankun-vue-root .home-discover {
+    padding: 34px 0 40px;
+  }
+  #app-qiankun-vue-root .section-heading {
+    display: block;
+  }
+  #app-qiankun-vue-root .section-heading h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  #app-qiankun-vue-root .discover-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  #app-qiankun-vue-root .discover-grid > a {
+    min-height: 245px;
+    padding: 26px;
+  }
+  #app-qiankun-vue-root .discover-feature h3 {
+    font-size: 28px;
+  }
+  #app-qiankun-vue-root .discover-feature > .vue-mark {
+    right: 20px;
+    width: 160px;
+    height: 145px;
+  }
+  #app-qiankun-vue-root .discover-card p {
+    max-width: 85%;
+  }
+  #app-qiankun-vue-root .studio-footer {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+  #app-qiankun-vue-root .studio-footer > span:nth-child(2) {
+    display: none;
+  }
+  #app-qiankun-vue-root .inner-page {
+    padding: 35px 0 45px;
+  }
+  #app-qiankun-vue-root .page-heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+  #app-qiankun-vue-root .page-heading h1 {
+    font-size: 36px;
+  }
+  #app-qiankun-vue-root .page-heading > p {
+    margin-top: 18px;
+    max-width: none;
+  }
+  #app-qiankun-vue-root .product-grid,
+  #app-qiankun-vue-root .about-story,
+  #app-qiankun-vue-root .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  #app-qiankun-vue-root .product-card {
+    padding: 28px;
+  }
+  #app-qiankun-vue-root .product-symbol {
+    font-size: 58px;
+    margin: 12px 0;
+  }
+  #app-qiankun-vue-root .solution-list article {
+    grid-template-columns: 40px 1fr;
+    gap: 10px;
+    padding: 24px 0;
+  }
+  #app-qiankun-vue-root .solution-list h2 {
+    font-size: 20px;
+  }
+  #app-qiankun-vue-root .solution-list article p {
+    grid-column: 2;
+  }
+  #app-qiankun-vue-root .solution-list article > span:last-child {
+    display: none;
+  }
+  #app-qiankun-vue-root blockquote {
+    font-size: 18px;
+    padding: 25px 18px;
+  }
+  #app-qiankun-vue-root .about-art {
+    min-height: 290px;
+  }
+  #app-qiankun-vue-root .contact-flower {
+    font-size: 70px;
+  }
+  #app-qiankun-vue-root .handbook {
+    display: block;
+  }
+  #app-qiankun-vue-root .handbook-sidebar {
+    position: static;
+    min-height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 20px;
+  }
+  #app-qiankun-vue-root .sidebar-caption {
+    margin-top: 6px;
+  }
+  #app-qiankun-vue-root .sidebar-label,
+  #app-qiankun-vue-root .sidebar-note,
+  #app-qiankun-vue-root .back-studio {
+    display: none;
+  }
+  #app-qiankun-vue-root .chapter-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 18px;
+  }
+  #app-qiankun-vue-root .chapter-nav button {
+    width: auto;
+    padding: 7px 10px;
+    border-color: var(--line);
+    gap: 6px;
+  }
+  #app-qiankun-vue-root .chapter-nav strong {
+    font-size: 10px;
+  }
+  #app-qiankun-vue-root .chapter-nav small,
+  #app-qiankun-vue-root .chapter-index,
+  #app-qiankun-vue-root .chapter-count {
+    display: none;
+  }
+  #app-qiankun-vue-root .handbook-main {
+    padding: 0 20px;
+  }
+  #app-qiankun-vue-root .handbook-topbar {
+    min-height: 59px;
+    font-size: 9px;
+  }
+  #app-qiankun-vue-root .version-badge {
+    font-size: 8px;
+    padding: 4px 7px;
+  }
+  #app-qiankun-vue-root .handbook-hero {
+    padding: 30px 0;
+  }
+  #app-qiankun-vue-root .handbook-hero .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+  #app-qiankun-vue-root .handbook-hero h1 {
+    font-size: 38px;
+  }
+  #app-qiankun-vue-root .handbook-stats {
+    gap: 20px;
+  }
+  #app-qiankun-vue-root .handbook-stats > span {
+    font-size: 9px;
+  }
+  #app-qiankun-vue-root .handbook-stats strong {
+    font-size: 20px;
+    margin-right: 4px;
+  }
+  #app-qiankun-vue-root .chapter-section {
+    padding-top: 25px;
+  }
+  #app-qiankun-vue-root .chapter-heading h2 {
+    font-size: 20px;
+  }
+  #app-qiankun-vue-root .difficulty-filter {
+    align-items: start;
+  }
+  #app-qiankun-vue-root .difficulty-filter > span {
+    max-width: 145px;
+    text-align: right;
+  }
+  #app-qiankun-vue-root .knowledge-entry > header,
+  #app-qiankun-vue-root .knowledge-entry > summary {
+    padding: 15px;
+    gap: 9px;
+  }
+  #app-qiankun-vue-root .knowledge-entry h3,
+  #app-qiankun-vue-root .entry-title {
+    font-size: 13px;
+  }
+  #app-qiankun-vue-root .knowledge-entry > header .badge {
+    display: none;
+  }
+  #app-qiankun-vue-root .entry-body {
+    padding: 15px;
+    gap: 17px;
+  }
+  #app-qiankun-vue-root .live-demo {
+    padding: 18px;
+  }
+  #app-qiankun-vue-root .handbook-footer {
+    font-size: 8px;
+    gap: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #app-qiankun-vue-root *,
+  #app-qiankun-vue-root *::before,
+  #app-qiankun-vue-root *::after {
+    transition: none !important;
+  }
+}

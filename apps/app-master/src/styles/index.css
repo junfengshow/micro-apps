@@ -1,0 +1,34 @@
+/* 不启用全局 Preflight，避免重置 Ant Design 和接入子应用的基础样式。 */
+/* 显式声明 Tailwind 层顺序；仅引入主题变量和工具类，扫描范围限定为主应用 src。 */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source("../");
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f1f5f9;
+}
+
+.master-sidebar.ant-layout-sider {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.master-sidebar > .ant-layout-sider-children {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+micro-app {
+  display: block;
+}

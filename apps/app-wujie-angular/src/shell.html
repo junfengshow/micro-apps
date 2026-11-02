@@ -1,0 +1,62 @@
+<div class="studio-shell">
+  <a class="skip-link" href="#main-content" (click)="focusMain($event)"
+    >跳至主要内容</a
+  >
+  <header class="topbar">
+    <a routerLink="/" class="brand" aria-label="Angular Studio 首页"
+      ><span class="brand-mark" aria-hidden="true">A</span
+      ><span>Angular<span class="brand-light"> Studio</span></span></a
+    >
+    <nav class="main-nav" aria-label="主导航">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="navMatch"
+        ariaCurrentWhenActive="page"
+        >首页</a
+      >
+      <a
+        routerLink="/products"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="navMatch"
+        ariaCurrentWhenActive="page"
+        >产品</a
+      >
+      <a
+        routerLink="/solutions"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="navMatch"
+        ariaCurrentWhenActive="page"
+        >方案</a
+      >
+      <a
+        routerLink="/about"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="navMatch"
+        ariaCurrentWhenActive="page"
+        >关于</a
+      >
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="navMatch"
+        ariaCurrentWhenActive="page"
+        >联系</a
+      >
+    </nav>
+    <a
+      routerLink="/angular"
+      class="nav-handbook"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="navMatch"
+      ariaCurrentWhenActive="page"
+      >Angular 知识手册 <span aria-hidden="true">↗</span></a
+    >
+  </header>
+  <main id="main-content" tabindex="-1"><router-outlet /></main>
+  <footer class="footer">
+    <a routerLink="/" class="brand"
+      >Angular Studio<span class="red-dot"></span></a
+    ><span>保持好奇，持续创造。</span><span>DESIGNED FOR EVERYDAY IDEAS</span>
+  </footer>
+</div>

@@ -1,0 +1,146 @@
+#app-vite-react-root .about-story {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  align-items: center;
+  gap: 72px;
+}
+#app-vite-react-root .story-art {
+  position: relative;
+  min-height: 310px;
+  overflow: hidden;
+  background: #e4ead9;
+}
+#app-vite-react-root .story-art::before {
+  position: absolute;
+  right: -65px;
+  bottom: -120px;
+  width: 380px;
+  height: 280px;
+  border-radius: 50%;
+  background: #cad9af;
+  content: "";
+  transform: rotate(-17deg);
+}
+#app-vite-react-root .story-circle {
+  position: absolute;
+  top: 73px;
+  left: 60px;
+  width: 170px;
+  height: 170px;
+  border: 1px solid rgb(80 100 60 / 25%);
+  border-radius: 50%;
+}
+#app-vite-react-root .story-circle::after {
+  position: absolute;
+  inset: 23px;
+  border: 1px solid rgb(80 100 60 / 20%);
+  border-radius: 50%;
+  content: "";
+}
+#app-vite-react-root .story-sun {
+  position: absolute;
+  z-index: 1;
+  top: 105px;
+  left: 109px;
+  color: #738b47;
+  font-size: 75px;
+  line-height: 1;
+}
+#app-vite-react-root .story-note {
+  position: absolute;
+  z-index: 2;
+  padding: 11px 15px;
+  background: #fbfcf9;
+  box-shadow: 0 9px 25px rgb(49 60 39 / 9%);
+  font-size: 10px;
+}
+#app-vite-react-root .note-one {
+  top: 34px;
+  right: 29px;
+  transform: rotate(6deg);
+}
+#app-vite-react-root .note-two {
+  right: 25px;
+  bottom: 38px;
+  transform: rotate(-5deg);
+}
+#app-vite-react-root .story-copy .mini-label {
+  display: block;
+  margin-bottom: 18px;
+}
+#app-vite-react-root .story-copy h2 {
+  margin-bottom: 18px;
+  font-size: 29px;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 1.4;
+}
+#app-vite-react-root .story-copy p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.95;
+}
+#app-vite-react-root .story-copy .text-link {
+  margin-top: 9px;
+}
+#app-vite-react-root .values-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 75px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+#app-vite-react-root .values-row > div {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 7px 12px;
+}
+#app-vite-react-root .values-row span {
+  grid-row: span 2;
+  color: #81935f;
+  font-size: 10px;
+}
+#app-vite-react-root .values-row strong {
+  font-size: 12px;
+}
+#app-vite-react-root .values-row p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+@media (max-width: 800px) {
+  #app-vite-react-root .about-story {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 560px) {
+  #app-vite-react-root .about-story {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  #app-vite-react-root .story-art {
+    min-height: 260px;
+  }
+  #app-vite-react-root .story-circle {
+    top: 50px;
+    left: 45px;
+  }
+  #app-vite-react-root .story-sun {
+    top: 82px;
+    left: 94px;
+  }
+  #app-vite-react-root .values-row {
+    gap: 15px;
+    margin-top: 45px;
+  }
+  #app-vite-react-root .values-row > div {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  #app-vite-react-root .values-row span {
+    grid-row: auto;
+  }
+}

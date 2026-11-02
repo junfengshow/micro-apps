@@ -1,0 +1,41 @@
+{
+  // 编译与类型检查选项；最终打包由 Webpack 或 Vite 完成。
+  "compilerOptions": {
+    // 保留 ES2022 级别的语法，面向支持这些特性的现代运行环境。
+    "target": "ES2022",
+    // 使用标准的类字段定义语义，与现代 JavaScript 行为一致。
+    "useDefineForClassFields": true,
+    // 提供浏览器 DOM、可迭代 DOM 集合与 ES2022 标准库的类型声明。
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    // 保留 ES 模块语法，将依赖分析和分包交给构建工具。
+    "module": "ESNext",
+    // 跳过依赖声明文件内部的类型检查，减少第三方类型带来的检查开销。
+    "skipLibCheck": true,
+    // 按打包工具的方式解析模块导入，与前端构建流程保持一致。
+    "moduleResolution": "Bundler",
+    // 允许导入路径显式包含 .ts/.tsx；配合 noEmit 使用。
+    "allowImportingTsExtensions": true,
+    // 允许直接导入 JSON 文件并推导其类型。
+    "resolveJsonModule": true,
+    // 要求每个文件可独立转译，与 ts-loader/Vite 的逐文件处理方式兼容。
+    "isolatedModules": true,
+    // 保留普通导入导出，仅移除显式标记为 type 的导入导出。
+    "verbatimModuleSyntax": true,
+    // 只检查类型；JS 转译和构建产物由 Vite 负责。
+    "noEmit": true,
+    // 使用 React 自动 JSX 运行时，无需仅为 JSX 手动导入 React。
+    "jsx": "react-jsx",
+    // 开启严格类型检查，包括空值和隐式 any 检查。
+    "strict": true,
+    // 报告未使用的局部变量和导入。
+    "noUnusedLocals": true,
+    // 报告未使用的函数参数。
+    "noUnusedParameters": true,
+    // 检查 switch 分支中意外遗漏的终止语句，避免非空分支贯穿。
+    "noFallthroughCasesInSwitch": true,
+    // 加载 Vite 的客户端环境、import.meta.env 和资源导入类型。
+    "types": ["vite/client"]
+  },
+  // 同时检查业务源码和 vite.config.ts，避免构建配置中的类型错误。
+  "include": ["src", "vite.config.ts"]
+}
