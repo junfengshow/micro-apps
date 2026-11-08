@@ -53,14 +53,14 @@ npm run dev
 
 主应用和各子应用分别构建到各自的 `dist`。各子应用独立部署，资源服务需允许主应用跨域读取资源。
 
-开发模式默认使用各子应用的本地端口。生产构建默认接入 [app-vite-react](https://app-vite-react-gules.vercel.app/)，其余子应用配置线上入口后也会加入同一个菜单。以下变量在主应用构建时读取，也可用于覆盖开发入口。
+开发模式从 `.env.development` 读取各子应用的本地入口，生产构建从 `.env.production` 读取线上入口。构建时传入的环境变量优先于文件中的同名值，所有配置了入口的子应用都会加入同一个菜单。
 
 | 环境变量 | 子应用入口 |
 | --- | --- |
 | `VITE_REACT_ENTRY` | app-vite-react 的 HTML 入口 |
 | `QIANKUN_VUE_ENTRY` | app-qiankun-vue 的 HTML 入口 |
 | `MICRO_APP_ENTRY` | app-micro-app 的 HTML 入口 |
-| `WUJIE_ANGULAR_ENTRY` | app-wujie-angular 的 HTML 入口 |
+| `WUJIE_ANGULAR_ENTRY` | app-wujie-angular 的入口，在环境文件中用引号保留 `#/` |
 | `FEDERATION_ENTRY` | app-federation 的完整 `remoteEntry.js` 地址 |
 | `REACT_SOURCE_ENTRY` | app-react-source 的 HTML 入口 |
 
