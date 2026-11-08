@@ -14,7 +14,7 @@ export default defineConfig(({ command, isPreview }) => {
     },
     // qiankun 通过动态 import 加载模块，资源必须指向子应用服务。
     // 部署时可通过 vite build --base=<子应用资源地址> 覆盖。
-    base: "http://localhost:7100/",
+    // base: "http://localhost:7100/",
     plugins: [
       // qiankun 开发桥接时不启用 React Fast Refresh，避免注入的运行时不兼容。
       ...(!useQiankunDevMode ? [react()] : []),
