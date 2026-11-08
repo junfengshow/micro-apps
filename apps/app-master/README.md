@@ -66,4 +66,6 @@ npm run dev
 
 主应用默认部署在站点根路径。部署到子路径时，在构建前设置 `APP_MASTER_BASE_PATH`，例如 `/workbench/`。服务器需将该路径下的页面请求回退到 `index.html`，缺失的 JS、CSS 应返回 404。
 
+在 Vercel 中将 Root Directory 设为 `apps/app-master`，Output Directory 设为 `dist`。`vercel.json` 会将 `/apps/` 下的子应用路由重写到 `index.html`，刷新或直接访问时由 React Router 接管。
+
 每个新应用覆盖开发服务器的 `sockjs > uuid` 到兼容 CommonJS 的 11.x。依赖锁文件独立管理，CI 可在各目录运行 `npm ci`。
