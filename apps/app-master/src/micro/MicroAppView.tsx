@@ -56,7 +56,7 @@ export function MicroAppView({ app }: { app: MicroAppDefinition }) {
           className="mb-4"
         />
       )}
-      <Spin spinning={loading} tip="正在加载子应用…">
+      <Spin spinning={loading} description="正在加载子应用…">
         <div ref={container} className="min-h-80" />
       </Spin>
     </section>

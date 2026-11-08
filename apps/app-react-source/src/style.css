@@ -1,114 +1,172 @@
 :root {
-  font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
-  color: #172a38;
-  background: #f3f6f7;
+  font-family: "SFMono-Regular", Consolas, "PingFang SC", monospace;
+  color: #f8f8f2;
+  background: #000;
   font-synthesis: none;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 * {
   box-sizing: border-box;
 }
+html,
 body {
+  height: 100%;
   margin: 0;
 }
-main {
-  width: min(1040px, 100%);
-  padding: 48px 28px 64px;
-  margin: auto;
+.lab-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
 }
-header {
-  padding: 16px 0 28px;
-}
-.eyebrow {
-  color: #167469;
-  letter-spacing: 0.12em;
-  font-size: 12px;
-  font-weight: 700;
-}
-h1 {
-  font-size: clamp(28px, 4vw, 44px);
-  letter-spacing: -0.04em;
-  margin: 12px 0;
-}
-h2 {
-  font-size: 20px;
-  margin-top: 0;
-}
-p {
-  color: #526570;
-}
-section {
-  margin: 16px 0;
-  padding: 26px;
-  border: 1px solid #dce5e8;
-  border-radius: 16px;
-  background: white;
-}
-.metadata {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.5fr;
-  gap: 20px;
-  background: #173c3b;
-  color: white;
-  border: 0;
-}
-small,
-strong {
-  display: block;
-}
-small {
-  color: #b4d3cd;
-  margin-bottom: 8px;
-}
-.controls {
+.runtime-info {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  align-items: center;
+  gap: 8px 28px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #414338;
+  background: #20211c;
+  color: #a4a69c;
+  font-size: 12px;
 }
-button {
-  background: #167469;
-  color: white;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  padding: 10px 16px;
-  cursor: pointer;
-  font: inherit;
+.runtime-info strong {
+  color: #66d9ef;
+  font-weight: 500;
 }
-button:hover {
-  background: #125e55;
+.runtime-info time {
+  color: #d9dbcf;
 }
-button:focus-visible {
-  outline: 3px solid #53b7ad;
-  outline-offset: 3px;
+.console-panel {
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  background: #000;
 }
-button.secondary {
-  color: #24464b;
-  background: #edf3f3;
-  border-color: #dce5e8;
-}
-.effect {
-  border-left: 3px solid #167469;
-  padding-left: 14px;
-}
-pre {
-  background: #edf3f3;
-  padding: 18px;
-  border-radius: 8px;
+.log-viewport {
+  height: 100%;
   overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #555 #000;
 }
-code,
-pre {
-  font-family: "SFMono-Regular", Consolas, monospace;
+.log-viewport:focus-visible {
+  outline: 1px solid #66d9ef;
+  outline-offset: -1px;
+}
+.log-list {
+  list-style: none;
+  padding: 8px 12px 32px;
+  margin: 0;
   font-size: 13px;
 }
+.log-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 4px 8px;
+  border-left: 2px solid transparent;
+  overflow-wrap: anywhere;
+}
+.log-warn {
+  border-left-color: #e6db74;
+}
+.log-error {
+  border-left-color: #f92672;
+}
+.log-scope {
+  flex-shrink: 0;
+  color: #919489;
+  font-size: 11px;
+}
+.log-values {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  min-width: 0;
+  gap: 4px 8px;
+  white-space: pre-wrap;
+}
+.snapshot-string {
+  color: #a6e22e;
+}
+.snapshot-value {
+  color: #a6e22e;
+}
+.snapshot-reference {
+  color: #ae81ff;
+}
+.snapshot-object {
+  max-width: 100%;
+  color: #ae81ff;
+}
+.snapshot-object summary {
+  color: #ae81ff;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.snapshot-object ul {
+  list-style: none;
+  border-left: 1px dashed #616456;
+  padding-left: 16px;
+  margin: 4px 0 4px 5px;
+}
+.snapshot-object li {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin: 2px 0;
+}
+.snapshot-key {
+  color: #66d9ef;
+  white-space: pre-wrap;
+}
+.log-title {
+  color: #e6db74;
+  font-weight: 700;
+}
+.log-step .log-title {
+  color: #a6e22e;
+}
+.log-tag .log-title,
+.log-tag > .log-values::before,
+.log-tag > .log-values::after {
+  color: #f92672;
+}
+.log-tag > .log-values::before,
+.log-tag > .log-values::after {
+  content: "##";
+}
+.log-line {
+  margin: 8px 0;
+  padding-top: 6px;
+  border-top: 1px dashed #ff7559;
+}
+.log-line .log-title {
+  color: #ff7559;
+}
+.log-warn .log-title {
+  color: #ff0000;
+  background: #ffff00;
+  padding: 0 4px;
+}
+.log-error .log-title {
+  color: #f92672;
+}
+.snapshot-annotation {
+  color: #ffa500;
+  font-weight: 600;
+}
 @media (max-width: 640px) {
-  main {
-    padding: 24px 16px;
+  .runtime-info {
+    padding: 8px 12px;
   }
-  section {
-    padding: 20px;
+  .log-list {
+    padding-left: 4px;
+    padding-right: 4px;
   }
-  .metadata {
-    grid-template-columns: 1fr;
+  .log-entry {
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }

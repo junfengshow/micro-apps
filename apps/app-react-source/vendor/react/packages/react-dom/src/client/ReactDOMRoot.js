@@ -260,6 +260,7 @@ export function createRoot(
       : container;
   listenToAllSupportedEvents(rootContainerElement);
 
+  MainLogger.info('hello this is root')
   // $FlowFixMe[invalid-constructor] Flow no longer supports calling new on functions
   return new ReactDOMRoot(root);
 }

@@ -1,27 +1,23 @@
-import React, { useState } from "react";
+import { useId, useState, type ComponentType } from "react";
 
-const DemoContainer:React.FC<{
-  Cmp?: React.ReactElement
-  children?: React.ReactNode
-}> = ({ children, Cmp }) => {
-  const [visible, setVisible] = useState(false)
-  if (!Cmp) {
-    return null
-  }
-  
+export default function DemoContainer({ Cmp }: { Cmp?: ComponentType }) {
+  const [visible, setVisible] = useState(false);
+  const resultId = useId();
+  if (!Cmp) return null;
+
   return (
-    <div className="">
-      <button onClick={() => {
-        setVisible(!visible)
-      }}>{visible?'隐藏': '显示'}结果</button>
-      {visible && <div 
-        style={{
-          padding: `10px 0`,
-        }}
+    <div>
+      <button
+        type="button"
+        aria-expanded={visible}
+        aria-controls={resultId}
+        onClick={() => setVisible((value) => !value)}
       >
-        <Cmp />
-      </div>}
+        {visible ? "隐藏" : "显示"}运行结果
+      </button>
+      <div id={resultId} hidden={!visible} style={{ padding: "10px 0" }}>
+        {visible && <Cmp />}
+      </div>
     </div>
-  )
+  );
 }
-export default DemoContainer

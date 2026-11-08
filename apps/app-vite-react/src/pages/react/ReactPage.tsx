@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { Link, useSearchParams } from "react-router";
 import { categories, searchEntries } from "./content";
-import { EventDemo, FormDemo, StateDemo } from "./demos";
+import StateDemo from "./demos/useStateDemo";
+import EventDemo from "./demos/propagationDemo";
+import FormDemo from "./demos/useActionStateDemo";
 import type { KnowledgeEntry } from "./types";
 import "./ReactPage.css";
-import DemoContainer from './demos/DemoContainer'
+import DemoContainer from "./demos/DemoContainer";
 
 function CodeExample({
   code,
@@ -32,13 +34,13 @@ function CodeExample({
     <div className="rh-code">
       <div className="rh-code-bar">
         <span>
-          <i /> {label} <b>JSX</b>
+          <i /> {label} <b>TSX</b>
         </span>
         <button type="button" onClick={copy}>
           复制代码
         </button>
       </div>
-      <pre tabIndex={0} aria-label={`${label} JSX`}>
+      <pre tabIndex={0} aria-label={`${label} TSX`}>
         <code>{code}</code>
       </pre>
       <span className="rh-copy-status" role="status">
@@ -55,7 +57,6 @@ function EntryBody({
   entry: KnowledgeEntry;
   interview?: boolean;
 }) {
-
   return (
     <div className="rh-entry-body">
       <div className="rh-entry-explanation">
@@ -372,7 +373,6 @@ export function ReactPage() {
               {category.id === "foundations" ? (
                 <>
                   <StateDemo />
-                  <StepClock />
                 </>
               ) : category.id === "events" ? (
                 <EventDemo />
@@ -406,7 +406,7 @@ export function ReactPage() {
                 <p>
                   {interview
                     ? "先完成题设，再展开答案。代码为方案关键片段，按题目上下文使用。"
-                    : "所有示例均为独立 JSX，可复制到 React 19.2+ 项目中练习。"}
+                    : "完整示例可展开运行，源码可复制到 React 19.2+ TypeScript 项目中练习。"}
                 </p>
               </aside>
             </div>

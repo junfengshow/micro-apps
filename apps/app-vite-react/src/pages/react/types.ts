@@ -1,3 +1,5 @@
+import type { ComponentType } from "react";
+
 export interface InterviewDetails {
   kind: "原理分析" | "代码推演" | "场景设计" | "故障排查";
   difficulty: "进阶" | "高级" | "专家";
@@ -17,7 +19,7 @@ export interface KnowledgeEntry {
   takeaway: string;
   source: string;
   interview?: InterviewDetails;
-  Demo?: React.ReactElement
+  demo?: ComponentType;
 }
 
 export interface InterviewEntry extends KnowledgeEntry {

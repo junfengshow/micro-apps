@@ -4,7 +4,15 @@ import {
   ElementRef,
   inject,
 } from "@angular/core";
-import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
+import { toSignal } from "@angular/core/rxjs-interop";
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+} from "@angular/router";
+import { filter, map } from "rxjs";
 
 @Component({
   selector: "studio-app",
@@ -20,6 +28,14 @@ export class StudioApp {
     fragment: "ignored",
     matrixParams: "ignored",
   } as const;
+  private readonly router = inject(Router);
+  readonly showNavigation = toSignal(
+    this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map(() => !this.router.isActive("/angular", this.navMatch))
+    ),
+    { initialValue: !this.router.isActive("/angular", this.navMatch) }
+  );
   private readonly element = inject<ElementRef<HTMLElement>>(ElementRef);
   focusMain(event: Event) {
     event.preventDefault();

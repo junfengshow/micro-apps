@@ -1,3 +1,7 @@
+import QUpdateQueueDemo from "../demos/qUpdateQueueDemo";
+import qUpdateQueueDemoCode from "../demos/qUpdateQueueDemo.tsx?raw";
+import QNestedComponentDemo from "../demos/qNestedComponentDemo";
+import qNestedComponentDemoCode from "../demos/qNestedComponentDemo.tsx?raw";
 import type { InterviewEntry } from "../types";
 
 export const stateEffectQuestions: InterviewEntry[] = [
@@ -33,15 +37,8 @@ setTimeout(() => console.log(count), 0);`,
       "若最后一项是 setCount(count + 1)，它传入的是固定值 1，最终显示 1。",
       "计时器等待多久都不会让闭包变量自动变化；依赖旧状态计算时使用函数式更新。",
     ],
-    code: `import { useState } from 'react';
-export default function Queue() {
-  const [count, setCount] = useState(0);
-  return <button onClick={() => {
-    setCount(n => n + 1);
-    setCount(5);
-    setCount(n => n + 1);
-  }}>结果：{count}</button>;
-}`,
+    demo: QUpdateQueueDemo,
+    code: qUpdateQueueDemoCode,
     takeaway: "setter 请求更新；它不是对当前局部变量赋值。",
     source: "https://react.dev/learn/queueing-a-series-of-state-updates",
   },
@@ -117,15 +114,8 @@ function renderCard(card) {
       "稳定 props 能减少计算，但普通重渲染本身通常不会让同一个输入 DOM 失焦。",
       "排查时同时检查变化的 key、条件分支的不同祖先和嵌套组件定义。",
     ],
-    code: `import { useState } from 'react';
-function InputEditor({ value, onChange }) {
-  return <input aria-label="名称" value={value}
-    onChange={e => onChange(e.target.value)} />;
-}
-export default function Page() {
-  const [name, setName] = useState('');
-  return <InputEditor value={name} onChange={setName} />;
-}`,
+    demo: QNestedComponentDemo,
+    code: qNestedComponentDemoCode,
     takeaway: "先检查组件是否被销毁，再考虑如何减少重渲染。",
     source: "https://react.dev/learn/preserving-and-resetting-state",
   },

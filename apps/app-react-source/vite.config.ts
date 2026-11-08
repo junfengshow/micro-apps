@@ -24,6 +24,14 @@ export default defineConfig(({ command, isPreview }) => {
   ) {
     throw new Error("缺少 React 本地构建产物，请先执行 npm run react:setup。");
   }
+  if (
+    command === "build" &&
+    !existsSync(`${built}react/cjs/react.production.js`)
+  ) {
+    throw new Error(
+      "当前只有 React 开发包。打包生产应用前，请执行 npm run react:build -- --production；日常调试使用 npm run dev。"
+    );
+  }
   const useDevMode = command === "serve" && !isPreview;
   return {
     base: "http://localhost:7105/",

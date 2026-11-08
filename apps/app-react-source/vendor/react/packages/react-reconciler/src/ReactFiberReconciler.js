@@ -430,6 +430,7 @@ function updateContainerImpl(
     }
   }
 
+  MainLogger.log('updateContainer --> updateContainerImpl')
   const update = createUpdate(lane);
   // Caution: React DevTools currently depends on this property
   // being called "element".
@@ -449,6 +450,13 @@ function updateContainerImpl(
     update.callback = callback;
   }
 
+  MainLogger.line('before enqueueUpdate')
+  MainLogger.info('info:', update)
+  MainLogger.debug('debug', element, update)
+  MainLogger.warn('warn')
+  MainLogger.error('error')
+  MainLogger.step('step')
+  MainLogger.tag('tag')
   const root = enqueueUpdate(rootFiber, update, lane);
   if (root !== null) {
     startUpdateTimerByLane(lane, 'root.render()', null);

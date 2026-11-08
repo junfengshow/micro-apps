@@ -5,6 +5,7 @@ import { ContactPage } from "../pages/contact/ContactPage";
 import { HomePage } from "../pages/home/HomePage";
 import { ProductsPage } from "../pages/products/ProductsPage";
 import { SolutionsPage } from "../pages/solutions/SolutionsPage";
+import UseLess from "../pages/useless";
 
 // 子页面使用相对路径，可同时用于独立运行和带 basePath 的微前端挂载。
 export const routes: RouteObject[] = [
@@ -30,6 +31,7 @@ export const routes: RouteObject[] = [
       return { Component: ReactPage };
     },
   },
+  { path: "useless", element: <UseLess /> },
   {
     element: <AppLayout />,
     children: [

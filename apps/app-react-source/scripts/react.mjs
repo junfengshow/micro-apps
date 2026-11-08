@@ -72,17 +72,23 @@ switch (process.argv[2]) {
     );
     break;
   case "build": {
+    const bundleTypes = [
+      "NODE_DEV",
+      // "NODE_PROD", // 日常源码调试跳过；需要正式包时传入 --production。
+    ];
+    if (process.argv.includes("--production")) bundleTypes.push("NODE_PROD");
     const cache = new URL("../.cache/", import.meta.url);
     // 编译失败时禁止 Vite 误用上一次成功构建的时间戳及不完整的新产物。
     rmSync(new URL("react-build.json", cache), { force: true });
     // 直接调用官方 Rollup 脚本，仅构建浏览器演示所需入口。
     // 不使用顶层 yarn build，避免同时构建多发布通道和 React Compiler。
     // bundles.js 已将其他目标注释保留，避免 CLI 子串匹配误选 jest-react/native。
+    console.log(`React 构建类型：${bundleTypes.join(", ")}`);
     run(
       "scripts/rollup/build.js",
       [
         "react/index,react/jsx-runtime,react/jsx-dev-runtime,react-dom/index,react-dom/client,scheduler/index",
-        "--type=NODE_DEV,NODE_PROD",
+        `--type=${bundleTypes.join(",")}`,
       ],
       { ...javaEnvironment(), RELEASE_CHANNEL: "stable" }
     );
@@ -94,6 +100,7 @@ switch (process.argv[2]) {
           tag: "v19.3.0",
           commit: "1d34f91dfde6bba84d08b683aaba164c7194dacb",
           compiledAt: new Date().toISOString(),
+          bundleTypes,
         },
         null,
         2

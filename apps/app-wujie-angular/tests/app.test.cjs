@@ -158,7 +158,7 @@ test("主应用 Shadow DOM 内的真实链接点击只更新子应用路由", as
   await app.input("#handbook-search", "OnPush");
   assert.equal(app.document.querySelectorAll(".entry").length, 1);
   assert.equal(app.search().q, "OnPush");
-  await app.click('.topbar a[href="#/products"]');
+  await app.route("/products");
   assert.deepEqual(Object.keys(app.search()), []);
   app.window.history.back();
   await pause();
@@ -173,10 +173,34 @@ test("主应用 Shadow DOM 内的真实链接点击只更新子应用路由", as
   app.window.__WUJIE_UNMOUNT();
   await app.window.__WUJIE_MOUNT();
   await pause();
+  assert.equal(app.document.querySelector(".topbar"), null);
+  await app.click('.book-sidebar a[href="#/"]');
   await app.click('.topbar a[href="#/about"]');
   assert.equal(app.path(), "/about");
   assert.equal(app.hostWindow.location.href, hostUrl);
   app.window.__WUJIE_UNMOUNT();
+});
+
+test("知识手册直达、筛选和后退时隐藏顶部导航，离开后恢复", async (t) => {
+  const app = await createApp(t, "#/angular?tab=interview&q=OnPush");
+  assert.equal(app.document.querySelector(".topbar"), null);
+  assert.ok(app.document.querySelector(".handbook"));
+  await app.click(".book-tabs button:first-child");
+  assert.equal(app.document.querySelector(".topbar"), null);
+  await app.click('.book-sidebar a[href="#/"]');
+  assert.ok(app.document.querySelector(".topbar"));
+  await app.click(".nav-handbook");
+  assert.equal(app.document.querySelector(".topbar"), null);
+  app.window.history.back();
+  await waitFor(
+    () => app.path() === "/" && app.document.querySelector(".topbar")
+  );
+  app.window.history.forward();
+  await waitFor(
+    () => app.path() === "/angular" && !app.document.querySelector(".topbar")
+  );
+  await app.route("/products");
+  assert.ok(app.document.querySelector(".topbar"));
 });
 
 test("跳至主要内容默认裁剪隐藏，聚焦后可用", async (t) => {

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { test } from "node:test";
 import { JSDOM } from "jsdom";
 
@@ -26,11 +26,19 @@ test("源码日志、useState 更新、effect 清理和卸载均使用本地产�
   const dom = new JSDOM('<div id="root"></div>', {
     url: "http://localhost:7105",
   });
+  const loggerNames = [
+    "Logger",
+    "MainLogger",
+    "EventsLogger",
+    "SchedulerLogger",
+    "RenderLogger",
+    "CommitLogger",
+    "HooksLogger",
+  ];
   const previous = Object.fromEntries(
-    ["window", "document", "IS_REACT_ACT_ENVIRONMENT"].map((key) => [
-      key,
-      Object.getOwnPropertyDescriptor(globalThis, key),
-    ])
+    ["window", "document", "IS_REACT_ACT_ENVIRONMENT", ...loggerNames].map(
+      (key) => [key, Object.getOwnPropertyDescriptor(globalThis, key)]
+    )
   );
   Object.assign(globalThis, {
     window: dom.window,
@@ -40,6 +48,16 @@ test("源码日志、useState 更新、effect 清理和卸载均使用本地产�
   const originalLog = console.log;
   const logs = [];
   console.log = (...args) => logs.push(args.join(" "));
+  // 允许在 React 源码中直接使用与页面一致的全局阶段日志。
+  const logger = Object.fromEntries(
+    ["log", "info", "debug", "warn", "error", "step", "tag", "line"].map(
+      (method) => [method, (...args) => console.log(...args)]
+    )
+  );
+  for (const name of loggerNames) {
+    dom.window[name] = logger;
+    globalThis[name] = logger;
+  }
   let root;
   let effects = 0;
   let cleanups = 0;
@@ -87,15 +105,6 @@ test("源码日志、useState 更新、effect 清理和卸载均使用本地产�
     root = undefined;
     assert.equal(container.textContent, "");
     assert.equal(cleanups, 2);
-    // NODE_PROD 产物应移除示例 __DEV__ 日志。
-    const production = readFileSync(
-      new URL(
-        "../vendor/react/build/node_modules/react-dom/cjs/react-dom-client.production.js",
-        import.meta.url
-      ),
-      "utf8"
-    );
-    assert.ok(!production.includes("[react-source] createRoot"));
   } finally {
     if (root) await React.act(() => root.unmount());
     console.log = originalLog;
@@ -105,4 +114,14 @@ test("源码日志、useState 更新、effect 清理和卸载均使用本地产�
     }
     dom.window.close();
   }
+});
+
+const production = new URL(
+  "../vendor/react/build/node_modules/react-dom/cjs/react-dom-client.production.js",
+  import.meta.url
+);
+test("生产产物移除示例开发日志", { skip: !existsSync(production) }, () => {
+  assert.ok(
+    !readFileSync(production, "utf8").includes("[react-source] createRoot")
+  );
 });
