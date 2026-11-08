@@ -48,7 +48,7 @@ src/
 - 挂载节点只在传入 `container` 内查找；未嵌入宿主时自动独立挂载。
 - `createWebHistory(basePath)` 使用宿主前缀 `/apps/app-qiankun-vue`。每次挂载独立创建 app 与 router；卸载销毁应用与 history 监听。
 - 全部样式限定到 `#app-qiankun-vue-root`，宿主继续使用 qiankun 的实验性样式隔离。
-- 手册异步分包使用注入的 publicPath；生产构建可通过 `npm run build -- --env publicPath=https://child.example.com/` 设置部署地址。静态服务需配置跨域响应头和 HTML history 回退。
+- 手册异步分包使用 qiankun 注入的资源目录，独立运行时从入口脚本推导。生产构建可通过 `--env publicPath=...` 覆盖独立运行的资源路径。静态服务需配置跨域响应头和 HTML history 回退。
 
 ## 验证
 

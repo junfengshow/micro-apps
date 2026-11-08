@@ -12,4 +12,4 @@ npm run build
 
 入口适配位于 `src/main.tsx`，UI 位于 `src/App.tsx`，React 根节点的创建和销毁位于 `src/render.tsx`。
 
-生产发布将 `dist` 部署到独立静态服务，并允许主应用跨域读取资源。构建时使用 npm run build -- --env publicPath=https://子应用域名/ 设置资源地址。主应用接入配置见 `apps/app-master/src/micro/apps.ts`。
+生产发布将 `dist` 部署到独立静态服务，并允许主应用跨域读取资源。资源目录由 micro-app 注入，独立运行时从入口脚本推导。需要指定资源目录时可在构建时传入 `--env publicPath=...`。在主应用构建前设置 `MICRO_APP_ENTRY` 注册子应用入口。

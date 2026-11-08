@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Alert, Button, Spin } from "antd";
+import { useHref } from "react-router";
 import { loadEngine } from "./engines";
 import type { MicroAppDefinition } from "./types";
 import { createLifecycleManager } from "./lifecycle";
@@ -7,6 +8,7 @@ import { createLifecycleManager } from "./lifecycle";
 const lifecycle = createLifecycleManager(loadEngine);
 
 export function MicroAppView({ app }: { app: MicroAppDefinition }) {
+  const basePath = useHref(`/apps/${app.name}`);
   const container = useRef<HTMLDivElement>(null);
   const [attempt, setAttempt] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -19,7 +21,7 @@ export function MicroAppView({ app }: { app: MicroAppDefinition }) {
     const session = lifecycle.start({
       app,
       container: container.current!,
-      basePath: `/apps/${app.name}`,
+      basePath,
     });
     void session.ready.then(
       () => {
@@ -38,7 +40,7 @@ export function MicroAppView({ app }: { app: MicroAppDefinition }) {
         .dispose()
         .catch((reason: unknown) => console.error("子应用卸载失败", reason));
     };
-  }, [app, attempt]);
+  }, [app, attempt, basePath]);
 
   return (
     <section aria-label={app.title}>

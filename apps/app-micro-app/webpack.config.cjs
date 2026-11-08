@@ -15,9 +15,8 @@ module.exports = (env = {}, argv = {}) => ({
     // 内容哈希用于缓存失效；异步分包和入口采用相同的命名规则。
     filename: "[name].[contenthash:8].js",
     chunkFilename: "[name].[contenthash:8].js",
-    // 绝对资源地址避免嵌入主应用后，从主应用域名误加载子应用分包。
-    // 生产部署可传 --env publicPath=https://child.example.com/ 覆盖（保留末尾 /）。
-    publicPath: env.publicPath || "http://localhost:7102/",
+    // micro-app 在 iframe 内联执行入口，由子应用在运行时取得资源目录。
+    publicPath: env.publicPath || "",
     // 各应用使用不同的运行时标识，避免同页加载时发生全局变量冲突。
     uniqueName: "app-micro-app",
     clean: true,
@@ -59,7 +58,7 @@ module.exports = (env = {}, argv = {}) => ({
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
   ],
   devServer: {
-    // 本地地址须与主应用 src/micro/apps.ts 的注册入口保持一致。
+    // 本地端口须与主应用构建配置中的默认开发入口保持一致。
     host: "localhost",
     port: 7102,
     // 允许不同端口的主应用读取入口与脚本；此处仅配置开发服务器。

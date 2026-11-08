@@ -1,8 +1,8 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, type RouteObject } from "react-router";
 import { MasterLayout } from "@/layouts/MasterLayout";
 
 // 使用 History 路由；开发和生产服务器都需将页面深层链接回退到 index.html。
-export const router = createBrowserRouter([
+const routes: RouteObject[] = [
   {
     // 首页、子应用页和未找到页共用侧边栏与内容布局。
     element: <MasterLayout />,
@@ -30,4 +30,8 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
+
+export const router = createBrowserRouter(routes, {
+  basename: __MASTER_BASE_PATH__,
+});

@@ -72,7 +72,7 @@ module.exports = (env = {}, argv = {}) => ({
     }),
   ],
   devServer: {
-    // 本地地址须与主应用 src/micro/apps.ts 的注册入口保持一致。
+    // 本地端口须与主应用构建配置中的默认开发入口保持一致。
     host: "localhost",
     port: 7104,
     // 允许不同端口的主应用读取入口与脚本；此处仅配置开发服务器。

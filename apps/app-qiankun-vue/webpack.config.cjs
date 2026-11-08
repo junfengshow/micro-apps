@@ -11,8 +11,8 @@ module.exports = (env = {}, argv = {}) => ({
     path: path.join(__dirname, "dist"),
     filename: "[name].[contenthash:8].js",
     chunkFilename: "[name].[contenthash:8].js",
-    // qiankun 挂载时由 public-path.ts 使用宿主注入的资源地址。
-    publicPath: env.publicPath || "http://localhost:7101/",
+    // qiankun 在沙箱中执行入口；public-path.ts 在分包加载前设置资源路径。
+    publicPath: env.publicPath || "",
     uniqueName: "app-qiankun-vue",
     library: { name: "appQiankunVue", type: "umd" },
     globalObject: "window",
@@ -37,7 +37,11 @@ module.exports = (env = {}, argv = {}) => ({
   },
   plugins: [
     new VueLoaderPlugin(),
-    new HtmlWebpackPlugin({ template: "./public/index.html" }),
+    // 独立运行时，深层路由回退到 HTML 后仍能从部署路径加载入口。
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+      publicPath: env.publicPath || "/",
+    }),
     new webpack.DefinePlugin({
       __VUE_OPTIONS_API__: false,
       __VUE_PROD_DEVTOOLS__: false,

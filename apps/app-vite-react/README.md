@@ -73,10 +73,6 @@ app-vite-react/
 - **micro-app**：主应用注册时启用 `iframe: true`，通过 iframe 沙箱执行 Vite 的原生 ES 模块，使用自己的虚拟路由 `/`，并通过 `window.mount` / `window.unmount` 管理生命周期。
 - **清理与样式**：卸载时销毁 React 根节点和 router。主题、公共样式和页面样式均限定在 `#app-vite-react-root` 内；独立运行时单独重置外层 body 的边距。
 
-本地构建的资源地址默认为 `http://localhost:7100/`，可直接用 `npm run preview` 供主应用加载。部署时使用实际子应用资源的完整地址构建，同时修改主应用注册表的 `entry`：
-
-```bash
-npm run build -- --base=https://example.com/app-vite-react/
-```
+在站点根路径部署可直接执行 `npm run build`。资源地址随子应用入口的站点解析，本地可用 `npm run preview` 供开发主应用加载。更换线上入口时，在主应用构建前设置 `VITE_REACT_ENTRY`。
 
 子应用服务需允许主应用跨域获取入口和静态资源。独立运行使用 History 路由，静态服务器需把页面路由请求回退到 `index.html`，以支持直接访问和刷新深层页面；缺失的静态资源应返回 404。

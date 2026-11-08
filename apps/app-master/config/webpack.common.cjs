@@ -6,23 +6,21 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // 以 app-master 为路径基准，避免从仓库根目录执行命令时改变资源定位。
 const root = path.resolve(__dirname, "..");
 
-module.exports = ({ engine, mode }) => ({
+module.exports = ({ mode, basePath, entries, federationEntry }) => ({
   mode,
   context: root,
   // main.tsx 通过异步 import 启动应用，为模块联邦初始化共享依赖留出边界。
   entry: "./src/main.tsx",
   output: {
-    // 全引擎模式与单引擎菜单模式分别输出。
-    path: path.join(root, "dist", engine),
+    path: path.join(root, "dist"),
     // 入口、异步分包与静态资源分别存放，内容哈希用于更新后的缓存失效。
     filename: "assets/js/[name].[contenthash:8].js",
     chunkFilename: "assets/js/[name].[contenthash:8].chunk.js",
     assetModuleFilename: "assets/media/[name].[contenthash:8][ext]",
-    // 主应用部署在站点根路径，异步资源始终从根路径加载。
-    publicPath: "/",
-    // 区分不同构建的 Webpack 运行时，避免共用页面时全局标识冲突。
-    uniqueName: `app-master-${engine}`,
-    // 仅清理当前 engine 对应的输出目录。
+    // 异步资源跟随实际加载的运行时脚本，部署时可以更换域名或路径。
+    publicPath: "auto",
+    // 主应用使用独立的 Webpack 运行时标识，避免和同页子应用冲突。
+    uniqueName: "app-master",
     clean: true,
     // 异步 JS 分包加载超过 15 秒即失败，交由页面展示错误并允许重试。
     chunkLoadTimeout: 15000,
@@ -33,6 +31,8 @@ module.exports = ({ engine, mode }) => ({
     alias: {
       // 与 tsconfig.json 的 @/* 保持一致：这里负责打包时的路径解析。
       "@": path.join(root, "src"),
+      // 未配置联邦入口时，菜单不注册该应用，构建也跳过远端模块。
+      ...(federationEntry ? {} : { "appFederation/mount$": false }),
     },
   },
   module: {
@@ -69,19 +69,23 @@ module.exports = ({ engine, mode }) => ({
     new webpack.container.ModuleFederationPlugin({
       // 宿主联邦容器名；远端容器名则由下面 remotes 中的 @ 前缀指定。
       name: "appMaster",
-      // 生产部署时通过 FEDERATION_ENTRY 指向实际远端；默认使用本地演示服务。
-      remotes: {
-        appFederation: `appFederation@${process.env.FEDERATION_ENTRY || "http://localhost:7104/remoteEntry.js"}`,
-      },
+      remotes: federationEntry
+        ? { appFederation: `appFederation@${federationEntry}` }
+        : {},
       shared: {
         // 主、子应用共享 React 与根渲染入口单例；版本范围需与远端保持兼容。
         react: { singleton: true, requiredVersion: "^19.2.0" },
         "react-dom/client": { singleton: true, requiredVersion: "^19.2.0" },
       },
     }),
-    // 从模板生成入口 HTML，自动注入带内容哈希的构建脚本。
-    new HtmlWebpackPlugin({ template: "./public/index.html" }),
-    // 编译期注入菜单筛选常量，JSON.stringify 确保替换结果是字符串字面量。
-    new webpack.DefinePlugin({ __MICRO_ENGINE__: JSON.stringify(engine) }),
+    // 深层路由刷新时，入口 HTML 仍从主应用部署路径加载脚本。
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+      publicPath: basePath,
+    }),
+    new webpack.DefinePlugin({
+      __MASTER_BASE_PATH__: JSON.stringify(basePath),
+      __MICRO_ENTRIES__: JSON.stringify(entries),
+    }),
   ],
 });

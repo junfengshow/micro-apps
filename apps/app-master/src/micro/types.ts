@@ -7,7 +7,7 @@ export interface MicroAppDefinition {
   title: string;
   /** HTML 入口；联邦应用填写描述性远端地址，实际地址由 Webpack remotes 决定。 */
   entry: string;
-  /** 选择运行时适配器，也用于构建时的菜单筛选。 */
+  /** 按应用选择运行时适配器。 */
   engine: EngineName;
   /** 仅 micro-app 适配器使用；Vite 原生 ES 模块需要启用 iframe 沙箱。 */
   iframe?: boolean;

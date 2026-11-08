@@ -1,5 +1,5 @@
-declare const __MICRO_ENGINE__:
-  "all" | "qiankun" | "micro-app" | "wujie" | "federation";
+declare const __MASTER_BASE_PATH__: string;
+declare const __MICRO_ENTRIES__: Record<string, string>;
 declare module "*.css";
 declare module "appFederation/mount" {
   export function mount(

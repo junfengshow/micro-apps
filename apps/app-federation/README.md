@@ -12,4 +12,4 @@ npm run build
 
 入口适配位于 `src/main.tsx`，UI 位于 `src/App.tsx`，React 根节点的创建和销毁位于 `src/render.tsx`。
 
-生产发布将 `dist` 部署到独立静态服务，并允许主应用跨域读取资源。联邦容器名为 appFederation，入口 remoteEntry.js，暴露 ./mount。主应用接入配置见 `apps/app-master/src/micro/apps.ts`。
+生产发布将 `dist` 部署到独立静态服务，并允许主应用跨域读取资源。联邦容器名为 appFederation，入口 remoteEntry.js，暴露 ./mount。在主应用构建前通过 `FEDERATION_ENTRY` 提供完整的入口地址。

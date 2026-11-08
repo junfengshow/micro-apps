@@ -3,15 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "webpack serve --config webpack.config.cjs --mode development --env engine=all",
-    "dev:qiankun": "webpack serve --config webpack.config.cjs --mode development --env engine=qiankun",
-    "dev:micro-app": "webpack serve --config webpack.config.cjs --mode development --env engine=micro-app",
-    "build": "npm run typecheck && webpack --config webpack.config.cjs --mode production --env engine=all",
-    "build:qiankun": "npm run typecheck && webpack --config webpack.config.cjs --mode production --env engine=qiankun",
-    "build:micro-app": "npm run typecheck && webpack --config webpack.config.cjs --mode production --env engine=micro-app",
+    "dev": "webpack serve --config webpack.config.cjs --mode development",
+    "build": "npm run typecheck && webpack --config webpack.config.cjs --mode production",
     "typecheck": "tsc --noEmit",
-    "dev:wujie": "webpack serve --config webpack.config.cjs --mode development --env engine=wujie",
-    "dev:federation": "webpack serve --config webpack.config.cjs --mode development --env engine=federation",
     "test": "tsc -p tsconfig.test.json && node --test .cache/tests/tests/*.test.js",
     "format": "prettier --config .prettierrc --ignore-path .prettierignore --write .",
     "format:check": "prettier --config .prettierrc --ignore-path .prettierignore --check ."

@@ -34,7 +34,6 @@ export default defineConfig(({ command, isPreview }) => {
   }
   const useDevMode = command === "serve" && !isPreview;
   return {
-    base: "http://localhost:7105/",
     define: {
       __REACT_SOURCE_BUILD__: readFileSync(manifest, "utf8"),
     },
@@ -60,7 +59,6 @@ export default defineConfig(({ command, isPreview }) => {
     build: { sourcemap: true },
     server: {
       host: "localhost",
-      origin: "http://localhost:7105",
       port: 7105,
       strictPort: true,
       cors: true,

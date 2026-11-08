@@ -42,6 +42,6 @@ npm run format:check
 
 Wujie 使用 `alive: false`、`sync: true`，内部 hash 同步到主应用的 `app-wujie-angular` 查询参数，刷新或分享链接可恢复页面及筛选。例如产品页对应 `/apps/app-wujie-angular?app-wujie-angular=%2F%23%2Fproducts`。
 
-生产构建示例：`npm run build -- --env publicPath=https://child.example.com/`。部署 `dist` 到允许主应用跨域读取资源的静态服务，并同步修改主应用注册入口。开发服务器不会自动打开浏览器。
+执行 `npm run build` 后，将 `dist` 部署到允许主应用跨域读取资源的静态服务。Webpack 根据入口脚本推导分包路径，也可在构建时传入 `--env publicPath=...`。在主应用构建前设置 `WUJIE_ANGULAR_ENTRY` 注册子应用入口。
 
 参考：[Angular 官方文档](https://angular.dev/)、[版本兼容性](https://angular.dev/reference/versions)、[无 Zone 变更检测](https://angular.dev/guide/zoneless)。

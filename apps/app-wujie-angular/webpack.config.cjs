@@ -19,9 +19,8 @@ module.exports = async (env = {}, argv = {}) => {
       // 内容哈希用于缓存失效；异步分包和入口采用相同的命名规则。
       filename: "[name].[contenthash:8].js",
       chunkFilename: "[name].[contenthash:8].js",
-      // 绝对资源地址避免嵌入主应用后，从主应用域名误加载子应用分包。
-      // 生产部署可传 --env publicPath=https://child.example.com/ 覆盖（保留末尾 /）。
-      publicPath: env.publicPath || "http://localhost:7103/",
+      // Wujie 保留入口脚本地址，Webpack 可以据此定位异步分包。
+      publicPath: env.publicPath || "auto",
       // 各应用使用不同的运行时标识，避免同页加载时发生全局变量冲突。
       uniqueName: "app-wujie-angular",
       clean: true,
@@ -71,7 +70,7 @@ module.exports = async (env = {}, argv = {}) => {
       new HtmlWebpackPlugin({ template: "./public/index.html" }),
     ],
     devServer: {
-      // 本地地址须与主应用 src/micro/apps.ts 的注册入口保持一致。
+      // 本地端口须与主应用构建配置中的默认开发入口保持一致。
       host: "localhost",
       port: 7103,
       // 允许不同端口的主应用读取入口与脚本；此处仅配置开发服务器。

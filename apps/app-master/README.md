@@ -13,21 +13,16 @@ npm install
 npm run dev
 ```
 
-访问 http://localhost:3000。四个新子应用分别监听 7101–7104；已有 Vite 应用保留在 7100。子应用未启动时对应页面显示错误并可重试。
+访问 http://localhost:3000，从同一个菜单打开任一子应用。六个子应用默认监听 7100–7105。子应用未启动时，对应页面显示错误并可重试。
 
-| 命令                                        | 用途                                             |
-| ------------------------------------------- | ------------------------------------------------ |
-| `npm run dev`                               | 默认全部引擎菜单，可在运行时切换                 |
-| `npm run dev:qiankun`                       | 仅展示 qiankun 菜单                              |
-| `npm run dev:micro-app`                     | 仅展示 micro-app 菜单                            |
-| `npm run dev:wujie`                         | 仅展示 wujie 菜单                                |
-| `npm run dev:federation`                    | 仅展示模块联邦菜单                               |
-| `npm run build`                             | 类型检查并构建完整主应用到 `dist/all`            |
-| `npm run build:qiankun` / `build:micro-app` | 构建对应菜单筛选模式                             |
-| `npm run typecheck`                         | 检查源文件                                       |
-| `npm test`                                  | 验证取消加载、串行卸载、失败后切换等生命周期行为 |
+| 命令 | 用途 |
+| --- | --- |
+| `npm run dev` | 启动主应用 |
+| `npm run build` | 类型检查并构建到 `dist` |
+| `npm run typecheck` | 检查源文件 |
+| `npm test` | 验证取消加载、串行卸载、失败后切换等生命周期行为 |
 
-单引擎命令现在用于筛选应用菜单。运行时加载表包含全部适配器，但只有访问对应应用时才下载引擎；不再使用构建别名替换引擎。生产配置未关闭默认包体积提示。
+主应用在打开子应用时按需加载对应的适配器。
 
 ## 目录与职责
 
@@ -56,10 +51,19 @@ npm run dev
 
 ## 部署
 
-完整主应用构建到 `dist/all`；四个新子应用分别构建到自己的 `dist`。各子应用应独立部署，资源服务允许主应用来源跨域读取资源。
+主应用和各子应用分别构建到各自的 `dist`。各子应用独立部署，资源服务需允许主应用跨域读取资源。
 
-- qiankun、micro-app、wujie：修改 `src/micro/apps.ts` 的 HTML 入口。子应用生产构建可执行 `npm run build -- --env publicPath=https://child.example.com/` 配置资源地址。
-- 模块联邦：在主应用构建前设置 `FEDERATION_ENTRY=https://remote.example.com/remoteEntry.js`；远端默认 `publicPath: auto`，分包跟随入口所在地址。注册表中的 entry 用于描述应用，实际联邦远端地址由 Webpack 的 remotes 决定。
-- 主应用使用 BrowserRouter，服务器将页面路径回退到 `index.html`；缺失的 JS、CSS 应返回 404。当前部署基路径为 `/`。
+开发模式默认使用各子应用的本地端口。生产构建默认接入 [app-vite-react](https://app-vite-react-gules.vercel.app/)，其余子应用配置线上入口后也会加入同一个菜单。以下变量在主应用构建时读取，也可用于覆盖开发入口。
+
+| 环境变量 | 子应用入口 |
+| --- | --- |
+| `VITE_REACT_ENTRY` | app-vite-react 的 HTML 入口 |
+| `QIANKUN_VUE_ENTRY` | app-qiankun-vue 的 HTML 入口 |
+| `MICRO_APP_ENTRY` | app-micro-app 的 HTML 入口 |
+| `WUJIE_ANGULAR_ENTRY` | app-wujie-angular 的 HTML 入口 |
+| `FEDERATION_ENTRY` | app-federation 的完整 `remoteEntry.js` 地址 |
+| `REACT_SOURCE_ENTRY` | app-react-source 的 HTML 入口 |
+
+主应用默认部署在站点根路径。部署到子路径时，在构建前设置 `APP_MASTER_BASE_PATH`，例如 `/workbench/`。服务器需将该路径下的页面请求回退到 `index.html`，缺失的 JS、CSS 应返回 404。
 
 每个新应用覆盖开发服务器的 `sockjs > uuid` 到兼容 CommonJS 的 11.x。依赖锁文件独立管理，CI 可在各目录运行 `npm ci`。

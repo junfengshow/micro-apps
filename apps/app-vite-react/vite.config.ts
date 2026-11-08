@@ -12,9 +12,6 @@ export default defineConfig(({ command, isPreview }) => {
     define: {
       __REACT_VERSION__: JSON.stringify(dependencies.react),
     },
-    // qiankun 通过动态 import 加载模块，资源必须指向子应用服务。
-    // 部署时可通过 vite build --base=<子应用资源地址> 覆盖。
-    // base: "http://localhost:7100/",
     plugins: [
       // qiankun 开发桥接时不启用 React Fast Refresh，避免注入的运行时不兼容。
       ...(!useQiankunDevMode ? [react()] : []),
@@ -22,17 +19,14 @@ export default defineConfig(({ command, isPreview }) => {
       qiankun("app-vite-react", { useDevMode: useQiankunDevMode }),
     ],
     server: {
-      // 与主应用注册的 http://localhost:7100/ 入口保持一致。
       host: "localhost",
-      // 指定开发资源的完整来源，嵌入主应用时仍从子应用服务加载。
-      origin: "http://localhost:7100",
       port: 7100,
       // 端口占用时直接失败，防止 Vite 换端口后与主应用注册入口不一致。
       strictPort: true,
       // 允许其他来源的主应用读取开发入口和模块资源。
       cors: true,
     },
-    // npm run preview 用同一地址提供 dist 产物，方便主应用加载本地生产构建。
+    // npm run preview 沿用开发端口，方便开发主应用加载本地生产构建。
     preview: {
       host: "localhost",
       port: 7100,
