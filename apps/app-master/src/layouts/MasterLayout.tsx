@@ -36,6 +36,18 @@ export function MasterLayout() {
                 <Link to={`${app.entry}`} target="__blank" className="relative"> &gt;</Link>
               </div>,
             })),
+            {
+              key: "github",
+              label: (
+                <a
+                  href="https://github.com/junfengshow/micro-apps"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub 项目地址
+                </a>
+              ),
+            },
           ]}
         />
       </Layout.Sider>

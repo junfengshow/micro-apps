@@ -4,6 +4,8 @@
 
 各应用独立管理依赖，根目录不设置 `package.json`；统一命令由 `scripts/workspace.mjs` 提供。
 
+正式环境：[主应用访问地址](https://micro-apps-app-master-beta.vercel.app/)
+
 ## 环境要求
 
 - Node.js：`^22.22.3 || ^24.15.0 || >=26.0.0`，满足全部应用的运行要求。

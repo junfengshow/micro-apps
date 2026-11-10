@@ -25,6 +25,8 @@ body {
 }
 
 .master-sidebar > .ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   overflow-y: auto;
 }

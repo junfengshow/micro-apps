@@ -18,7 +18,6 @@ export async function mount(
   const router = createAppRouter(props.basePath);
   const app = createApp(App);
   app.use(router);
-  console.log("this is hello");
   dispose = () => {
     app.unmount();
     router.options.history.destroy();
